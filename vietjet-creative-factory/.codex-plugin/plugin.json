@@ -1,0 +1,35 @@
+{
+  "name": "vietjet-creative-factory",
+  "version": "0.1.0",
+  "description": "Create and quality-check governed Vietjet campaign image, video, carousel, aircraft, mascot, face, and typography prompts.",
+  "author": {
+    "name": "Vietjet Creative AI Ops"
+  },
+  "keywords": [
+    "creative-production",
+    "image-prompts",
+    "video-prompts",
+    "visual-qa",
+    "brand-lock",
+    "airline"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Vietjet Creative Factory",
+    "shortDescription": "Build governed Vietjet creative prompts",
+    "longDescription": "Produce and review governed prompts and specifications for Vietjet campaign images, videos, carousel series, aircraft visuals, mascots, face identity, typography, and visual QA while preserving campaign facts and brand constraints.",
+    "developerName": "Vietjet Creative AI Ops",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Create a governed campaign image prompt",
+      "Build a no-text video prompt",
+      "Review this visual for brand and lock compliance"
+    ],
+    "brandColor": "#E31B23"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "vietjet-commercial-ops",
+  "version": "0.1.0",
+  "description": "Plan, review, and govern Vietjet commercial, revenue, marketing, CRM, and executive-reporting work.",
+  "author": {
+    "name": "Vietjet Commercial AI Ops"
+  },
+  "keywords": [
+    "airline",
+    "commercial",
+    "revenue-management",
+    "marketing",
+    "crm",
+    "campaign-governance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Vietjet Commercial Ops",
+    "shortDescription": "Draft and govern airline commercial work",
+    "longDescription": "Create route marketing plans, campaign packs, CRM journeys, revenue programs, executive reports, brand rewrites, and pre-launch promotional reviews with explicit data labels and human approval gates.",
+    "developerName": "Vietjet Commercial AI Ops",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Review this promotion for launch risks",
+      "Build a route marketing plan",
+      "Turn this brief into a campaign pack"
+    ],
+    "brandColor": "#E31B23"
+  }
+}

@@ -71,6 +71,8 @@ Example:
 
 ## Suite Documentation
 
+- [Optional Pilot Commands](COMMANDS.md) — six thin, repeatable entry points added only for
+  pilot-confirmed high-risk or multi-skill workflows.
 - [Codex Installation And Usage](CODEX_INSTALLATION.md) — open the workspace, reference plugins and
   skills, run governed tasks, and troubleshoot context.
 - [Quick Start](QUICK_START.md) — six copy-paste governed pilot prompts.
@@ -84,12 +86,15 @@ Example:
 ```text
 Vietjet-marketing/
 ├── CODEX_INSTALLATION.md
+├── COMMANDS.md
 ├── CUSTOMIZATION_GUIDE.md
 ├── QUICK_START.md
 ├── README.md
 ├── SOURCE_ALIGNMENT_AUDIT.md
 ├── vietjet-commercial-ops/
+│   └── commands/
 └── vietjet-creative-factory/
+    └── commands/
 ```
 
 ## Version Status

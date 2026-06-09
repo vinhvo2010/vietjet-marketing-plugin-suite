@@ -42,6 +42,22 @@ Before adding a skill:
 Do not add a skill merely to create another prompt alias. A skill should encode reusable expertise,
 an SOP, or a distinct governed workflow.
 
+## Add A Command Only After Pilot Evidence
+
+A command is a thin orchestration entry point, not a new capability or policy source. Add one only
+when pilot usage shows a repeated routing problem, a recurring governance omission, a high-risk
+review that benefits from standard inputs, or a meaningful multi-skill sequence.
+
+Before adding a command:
+
+1. Confirm the flow already exists in current skills and references.
+2. Link to the existing skills and shared governance instead of duplicating their policy.
+3. Define required input, sequence, output, handoffs, and stop conditions.
+4. Keep approval, publishing, activation, sending, and execution outside the command.
+5. Add it to [COMMANDS.md](COMMANDS.md) and test it against a realistic pilot case.
+
+Do not add commands merely to provide aliases for every skill.
+
 ## Update References
 
 Use references for shared governance, deterministic worksheets, reusable templates, identity locks,

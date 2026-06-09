@@ -2,6 +2,13 @@
 
 ## Unreleased - v0.1.1
 
+### Post-Pilot Command UX Refinement
+
+- Add thin optional commands for `promo-qa`, `route-launch`, `planning-scenario`, and
+  `campaign-mini-flow`.
+- Keep commands delegated to existing skills and operating governance.
+- Add no new skills, approval authority, connectors, publishing, activation, or execution scope.
+
 ### Planned
 
 - Add a standard evidence-and-approval intake template for every substantive output.

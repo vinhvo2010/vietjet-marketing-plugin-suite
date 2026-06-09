@@ -32,6 +32,16 @@ Creative work may continue with placeholders or non-commercial concepts, but unr
 
 See [SKILL_INDEX.md](SKILL_INDEX.md) for required inputs, outputs, controlled risks, and commercial-handoff rules.
 
+## Optional Pilot Commands
+
+| Command | Coordinated workflow |
+|---|---|
+| `creative-kv` | Image prompt, applicable identity locks, text safety, and visual QA |
+| `visual-qa` | Blocking brand, IP, text, artifact, lock, and commercial-claim review |
+
+Commands are thin entry points into existing skills and governance. They do not create approval,
+publish assets, or add creative capabilities.
+
 ## Example Prompts
 
 ```text

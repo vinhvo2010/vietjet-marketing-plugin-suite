@@ -13,8 +13,9 @@ the current controlled MVP. The suite is Codex-local and does not require extern
 - A human owner who can review any output intended for operational or external use
 - Authorized source facts or local files for claims that must be verified
 
-No Python dependencies, external connectors, Claude manifests, or slash commands are required for
-the current MVP.
+No Python dependencies, external connectors, or Claude manifests are required for the current MVP.
+Optional repo-local commands provide repeatable entry points for pilot-confirmed workflows; direct
+skill prompts remain supported.
 
 ## Workspace Location
 
@@ -79,6 +80,23 @@ Use the `aircraft-lock` skill from `vietjet-creative-factory`.
 Build an A330-300 lock using only the supplied approved references.
 Mark unsupported details as not verifiable.
 ```
+
+## Use An Optional Command
+
+Use commands when the same governed flow is repeated or requires multiple skills:
+
+```text
+Use the `route-launch` command from `vietjet-commercial-ops`.
+Input: [paste route brief and authorized evidence references]
+```
+
+```text
+Use the `creative-kv` command from `vietjet-creative-factory`.
+Input: [paste governed campaign brief and approved visual references]
+```
+
+If the current runtime does not expose repo-local commands, use the equivalent prompt and name the
+skills directly. See [COMMANDS.md](COMMANDS.md) for the command set and boundaries.
 
 ## Run A Task With Governance
 

@@ -34,6 +34,18 @@ This plugin is not a replacement for approved policy, Legal advice, Revenue appr
 
 See [SKILL_INDEX.md](SKILL_INDEX.md) for required inputs, outputs, and controlled risks.
 
+## Optional Pilot Commands
+
+| Command | Coordinated workflow |
+|---|---|
+| `promo-qa` | High-risk promotion review with date, terms, inventory, parity, and approval checks |
+| `route-launch` | Route fact sheet plus route positioning and campaign planning |
+| `planning-scenario` | Lightweight assumption-led scenario before a full Revenue PMO workflow |
+| `campaign-mini-flow` | Commercial truth through creative handoff, measurement, and human review |
+
+Commands are thin entry points into existing skills and governance. They do not approve, publish,
+activate, or add capabilities.
+
 ## Example Prompts
 
 ```text

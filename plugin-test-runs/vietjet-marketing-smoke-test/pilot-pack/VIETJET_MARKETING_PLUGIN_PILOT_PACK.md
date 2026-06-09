@@ -30,6 +30,9 @@ The Vietjet Marketing plugin suite is suitable for controlled internal pilot use
 - Asset and video production should remain separate from campaign thinking.
 - Production readiness must not be confused with concept readiness.
 
+The pilot-confirmed orchestration gap is addressed by a small optional command set for high-risk
+and multi-skill flows. Direct skill prompts remain the default for simpler work.
+
 ## 4. Recommended Pilot Scope
 
 ### In Scope
@@ -141,4 +144,9 @@ The Vietjet Marketing plugin suite is suitable for controlled internal pilot use
 
 ## 10. Final Recommendation
 
-Proceed with a controlled internal pilot. Use the suite to accelerate drafts and QA while keeping human approval mandatory. Improve command UX and suite-level workflow guidance next.
+Proceed with a controlled internal pilot. Use the suite to accelerate drafts and QA while keeping
+human approval mandatory.
+
+Command UX refinement starts with six thin commands only: promo QA, route launch, lightweight
+planning scenario, end-to-end mini campaign, creative KV, and visual QA. Add further commands only
+after pilot evidence shows a repeated need.

@@ -13,10 +13,10 @@ role/workflow-oriented plugins; each plugin packages reusable skills and documen
 content is customized for company terminology, processes, and risks.
 
 The suite intentionally diverges at the runtime-packaging layer. It is currently a repo-local
-Codex suite using `.codex-plugin/plugin.json`, with no Claude manifests, slash commands, root Claude
-marketplace manifest, or bundled MCP configuration. This is appropriate for the stated internal
-Codex pilot. It is not currently installable as a Claude Code/Cowork plugin suite without additional
-packaging.
+Codex suite using `.codex-plugin/plugin.json`, with no Claude manifests, root Claude marketplace
+manifest, or bundled MCP configuration. After pilot usage confirmed repeated orchestration needs,
+the suite added a limited command set that delegates to existing skills. It is not currently
+installable as a Claude Code/Cowork plugin suite without additional packaging.
 
 The local skills are more governed and operationally specific than the generic Anthropic marketing
 baseline. All 16 skills have YAML frontmatter, focused descriptions, required inputs, workflows,
@@ -146,23 +146,22 @@ into linked references while retaining the trigger, workflow, and output contrac
 ### Finding
 
 The Anthropic knowledge-work plugins commonly include `commands/` so users can invoke repeatable
-workflows explicitly. The Vietjet plugins are currently skill-first and contain no command files.
+workflows explicitly. The Vietjet plugins remain skill-first, but now include six thin commands for
+pilot-confirmed high-risk or multi-skill workflows.
 
 Commands are not required for the current Codex runtime or for the skills to trigger. Commands are
-also optional in the broader Claude plugin standard. However, commands would improve discoverability
-and repeatability if the suite targets Claude Code/Cowork.
+also optional in the broader Claude plugin standard. The current commands improve repeatability
+without duplicating skill policy.
 
-### Recommended Future Command Set
+### Current Command Set
 
-Do not create these during the current Codex pilot.
-
-| Plugin | Recommended commands |
+| Plugin | Commands |
 |---|---|
-| `vietjet-commercial-ops` | `campaign-plan`, `route-launch`, `promo-qa`, `crm-sequence`, `revenue-brief`, `executive-brief`, `brand-review` |
-| `vietjet-creative-factory` | `image-prompt`, `video-prompt`, `carousel-series`, `visual-qa`, `aircraft-lock`, `mascot-lock`, `face-lock`, `text-safety` |
+| `vietjet-commercial-ops` | `promo-qa`, `route-launch`, `planning-scenario`, `campaign-mini-flow` |
+| `vietjet-creative-factory` | `creative-kv`, `visual-qa` |
 
-Each future command should be a thin explicit workflow entry point that delegates to existing skills
-and governance. It should not duplicate or fork skill policy.
+Each command is a thin explicit workflow entry point that delegates to existing skills and
+governance. Add more only after pilot evidence confirms a repeated need.
 
 ## 5. MCP / Connector Comparison
 
@@ -216,16 +215,16 @@ This gives the suite unusually strong release evidence and operational guidance.
 | Target personas | Present across README/runbooks | Creative README does not surface personas directly |
 | Available skills | Present | None |
 | Examples | Present | None |
-| Installation instructions | Missing | No repo-local Codex install/activation procedure |
-| Quick start | Partial | Examples and runbooks exist, but no short first-run sequence |
-| Commands and command examples | Missing by design | No commands exist |
+| Installation instructions | Present | Repo-local Codex usage and optional command fallback documented |
+| Quick start | Present | Copy-paste governed first-run examples available |
+| Commands and command examples | Present | Six pilot-confirmed thin commands plus suite command guide |
 | Connector setup | Partial | Fallback rules exist; no setup instructions because connectors are not bundled |
-| Customization notes | Missing | No concise guide for changing terminology, processes, references, or governance safely |
+| Customization notes | Present | Safe skill, reference, governance, lock, and command evolution documented |
 
 ### Recommendation
 
-For the next documentation-only refinement, add Codex-local installation, a short quick start, and
-safe customization notes. Add connector setup only when connectors are actually introduced.
+Keep commands limited to pilot-confirmed repeated workflows. Add connector setup only when
+connectors are actually introduced.
 
 ## 7. Governance Comparison
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Post-Pilot Command UX Refinement
+
+- Add thin optional commands for `creative-kv` and `visual-qa`.
+- Keep commands delegated to existing skills and creative governance.
+- Add no new skills, approval authority, asset publishing, or production scope.
+
 ## v0.1.0 - 2026-06-08
 
 ### Added

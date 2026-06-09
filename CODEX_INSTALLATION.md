@@ -21,21 +21,21 @@ the current MVP.
 Open this folder as the workspace root:
 
 ```text
-/Users/vinhvo2010/Documents/Vietjet-marketing
+<REPO_ROOT>
 ```
 
 The repo-local plugins are:
 
 ```text
-/Users/vinhvo2010/Documents/Vietjet-marketing/vietjet-commercial-ops
-/Users/vinhvo2010/Documents/Vietjet-marketing/vietjet-creative-factory
+<REPO_ROOT>/vietjet-commercial-ops
+<REPO_ROOT>/vietjet-creative-factory
 ```
 
 ## Open The Repo In Codex Or Antigravity
 
 1. Start Codex or Antigravity.
 2. Choose the option to open a folder or workspace.
-3. Open `/Users/vinhvo2010/Documents/Vietjet-marketing`.
+3. Open `<REPO_ROOT>`.
 4. Start a new task from the repository root.
 5. Name the plugin and skill you want used in the prompt when deterministic routing matters.
 
@@ -48,12 +48,12 @@ Use the plugin name and local path explicitly:
 
 ```text
 Use the repo-local `vietjet-commercial-ops` plugin at
-`/Users/vinhvo2010/Documents/Vietjet-marketing/vietjet-commercial-ops`.
+`<REPO_ROOT>/vietjet-commercial-ops`.
 ```
 
 ```text
 Use the repo-local `vietjet-creative-factory` plugin at
-`/Users/vinhvo2010/Documents/Vietjet-marketing/vietjet-creative-factory`.
+`<REPO_ROOT>/vietjet-creative-factory`.
 ```
 
 For cross-plugin work, state the order and boundary:
@@ -111,7 +111,7 @@ work, follow
 
 If the agent ignores or incompletely applies plugin context:
 
-1. Confirm the workspace root is `/Users/vinhvo2010/Documents/Vietjet-marketing`.
+1. Confirm the workspace root is `<REPO_ROOT>`.
 2. Name the required plugin and skill explicitly.
 3. Include the full plugin path in the request.
 4. Ask the agent to read the plugin README, the selected `SKILL.md`, and its linked governance

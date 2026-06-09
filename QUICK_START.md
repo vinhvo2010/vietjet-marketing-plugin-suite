@@ -1,6 +1,6 @@
 # Quick Start
 
-Open `/Users/vinhvo2010/Documents/Vietjet-marketing` in Codex or Antigravity, then use one of the
+Open `<REPO_ROOT>` in Codex or Antigravity, then use one of the
 following copy-paste prompts. Every output remains a draft until human review.
 
 ## 1. HAN ⇄ PRG Route Launch

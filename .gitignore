@@ -1,1 +1,55 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+.private/
+
+# OS / editor
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node / web
+node_modules/
+.next/
+dist/
+build/
+out/
+.vercel/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs / caches
+*.log
+.cache/
+.tmp/
+tmp/
+
+# Large/generated media drafts
+**/assets/rejected/
+**/generated-assets/raw/
+**/*.psd
+**/*.ai
+**/*.mov
+**/*.mp4
+**/*.zip
+
+# Campaign-generated draft and legacy media binaries
+**/assets/draft/*
+!**/assets/draft/.gitkeep
+!**/assets/draft/*.md
+campaigns/**/html-preview/assets/*.png
+
+# Local-only
+.local/

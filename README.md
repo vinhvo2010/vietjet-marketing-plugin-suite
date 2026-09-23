@@ -1,5 +1,24 @@
 # Vietjet AI Plugin Suite
 
+## Beta: 18 specialist roles / 24 skills (v5.0.4)
+
+[Vietjet AI Marketing Suite](plugins/vietjet-ai-marketing-suite/README.md) is available through the `vietjet-team` Git marketplace for Codex users. The 18 roles are skill-based specialists, not autonomous agents. Human review remains mandatory before publication, spending, fare changes, personal-data use, or safety-related communications. This beta is **not** an OpenAI Plugins Directory listing, and its development App/MCP attachment may not be available to other accounts.
+
+Install once:
+
+```bash
+codex plugin marketplace add vinhvo2010/vietjet-marketing-plugin-suite
+codex plugin add vietjet-ai-marketing-suite@vietjet-team
+```
+
+For later plugin updates, refresh the marketplace and start a new Codex task:
+
+```bash
+codex plugin marketplace upgrade vietjet-team
+```
+
+Use `$vietjet-ai-marketing-suite:vietjet-marketing-squad` or `/vietjet-ai-marketing-suite:vietjet-marketing-squad` in a new task. See the [Vietnamese team guide](TEAM_PLUGIN_RELEASE_2026-09-23.md) for caveats and testing steps.
+
 ## Suite Purpose
 
 This repository contains a repo-local Codex plugin suite for governed Vietjet commercial and creative workflows. The suite helps internal teams move from verified commercial inputs to controlled creative production while preserving clear data boundaries, governance checks, and human approval gates.

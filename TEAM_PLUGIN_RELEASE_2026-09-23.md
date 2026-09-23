@@ -28,6 +28,8 @@ codex plugin marketplace upgrade vietjet-team
 
 Sau đó mở task mới và thử gọi skill có namespace. Đây là **một lệnh refresh + task mới**, không phải cập nhật nội dung trong task đang mở. Nếu máy vẫn hiện version cũ, kiểm tra `codex plugin list` và hướng dẫn cập nhật của bản Codex đang dùng; không xoá plugin cũ trước khi có bản sao lưu và thử nghiệm. Không giả định rằng mọi máy tự cập nhật tức thì hoặc App/MCP riêng cũng được cập nhật theo.
 
+Trên máy thử có nhiều skill khác đã cài, Codex cảnh báo giới hạn ngữ cảnh cho danh mục skill; lời gọi tường minh theo namespace vẫn chạy và đọc được quy chuẩn. Chưa xác nhận khả năng tự gợi ý skill hoặc trải nghiệm trên tài khoản/máy độc lập.
+
 ## Cổng còn thiếu trước khi mở rộng hoặc nộp Directory
 
 - Xác nhận ai có quyền phát hành tên, nhận diện và nội dung Vietjet; vì source hiện ghi giấy phép `Proprietary`.

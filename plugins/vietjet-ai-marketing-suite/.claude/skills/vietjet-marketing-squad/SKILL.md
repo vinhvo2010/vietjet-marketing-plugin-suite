@@ -5,9 +5,13 @@ description: "Kích hoạt Vietjet Group Marketing AI Team gồm 18 specialist v
 
 # VIETJET GROUP MARKETING AI TEAM (18 SPECIALISTS)
 
+## Định vị tài liệu plugin
+
+Xác định `PLUGIN_ROOT` là thư mục chứa `plugin.json`, `rules/` và `skills/vietjet-marketing-squad/SKILL.md` của **bản plugin đang nạp skill này**. Ưu tiên đường dẫn tuyệt đối của `SKILL.md` do host cung cấp; nếu thiếu, xem `codex plugin list --json`, chọn đúng bản đang bật rồi lấy `source.path`. Kiểm tra `PLUGIN_ROOT/rules/00_INDEX.md` tồn tại. Mọi đường dẫn `rules/`, `schemas/`, `bin/` bên dưới đều tính từ `PLUGIN_ROOT`; liên kết `../../...` tính từ thư mục chứa chính `SKILL.md`. **Không** tìm `rules/` trong thư mục dự án đang mở. Nếu không xác định được gốc plugin, báo thiếu và dừng.
+
 ## 0. NẠP TRƯỚC — BẮT BUỘC
 
-Trước khi triệu hồi bất kỳ agent nào, nạp toàn bộ tầng quy chuẩn:
+Trước khi triệu hồi bất kỳ agent nào, nạp toàn bộ tầng quy chuẩn từ `PLUGIN_ROOT`:
 
 ```
 rules/00_INDEX.md

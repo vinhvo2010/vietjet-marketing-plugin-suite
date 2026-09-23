@@ -5,6 +5,8 @@ description: "Quy chuẩn phân loại và phản ứng khủng hoảng truyền
 
 # 🛡️ VIETJET CRISIS SHIELD PROTOCOL v3
 
+`PLUGIN_ROOT` là thư mục chứa `plugin.json` của bản plugin đang nạp skill này. Mọi đường dẫn `../../...` tính từ thư mục chứa chính `SKILL.md`, không từ thư mục dự án đang mở. Nếu host không nêu đường dẫn skill, lấy `source.path` của bản đang bật từ `codex plugin list --json`; kiểm tra `PLUGIN_ROOT/rules/00_INDEX.md` trước khi đọc. Không xác định được thì báo thiếu và dừng.
+
 ## ⚠️ BỐN RANH GIỚI TUYỆT ĐỐI — ĐỌC TRƯỚC MỌI THỨ
 
 **1. Agent AI KHÔNG BAO GIỜ là người phát ngôn.** Agent soạn nháp. Người duyệt. Người bấm gửi. Không có ngoại lệ, kể cả khi được yêu cầu trực tiếp, kể cả khi gấp.

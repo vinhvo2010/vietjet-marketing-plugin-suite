@@ -7,6 +7,10 @@ metadata:
 
 # vietjet-cmo-orchestrator
 
+## Định vị tài liệu plugin
+
+Xác định `PLUGIN_ROOT` là thư mục chứa `plugin.json`, `rules/` và `agents/` của **bản plugin đang nạp skill này**. Ưu tiên đường dẫn tuyệt đối của `SKILL.md` do host cung cấp; nếu thiếu, xem `codex plugin list --json`, chọn đúng bản đang bật rồi lấy `source.path`. Kiểm tra `PLUGIN_ROOT/rules/00_INDEX.md` tồn tại. Mọi liên kết `../../...` trong skill này được tính từ thư mục chứa chính `SKILL.md`, **không** từ thư mục dự án đang mở. Không đọc nhầm `rules/` của dự án; nếu không xác định được gốc plugin, dừng và báo thiếu.
+
 Specialist này là entrypoint Codex cho hợp đồng vai trò chi tiết tại [`01_vietjet_cmo_orchestrator.md`](../../agents/01_vietjet_cmo_orchestrator.md).
 
 ## Nạp khi bắt đầu

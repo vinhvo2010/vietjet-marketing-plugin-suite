@@ -5,6 +5,8 @@ description: "Bản địa hoá nội dung marketing Vietjet Air cho các thị 
 
 # 🌏 BẢN ĐỊA HOÁ THỊ TRƯỜNG QUỐC TẾ
 
+`PLUGIN_ROOT` là thư mục chứa `plugin.json` của bản plugin đang nạp skill này. Mọi đường dẫn `../../...` tính từ thư mục chứa chính `SKILL.md`, không từ thư mục dự án đang mở. Nếu host không nêu đường dẫn skill, lấy `source.path` của bản đang bật từ `codex plugin list --json`; kiểm tra `PLUGIN_ROOT/rules/00_INDEX.md` trước khi đọc. Không xác định được thì báo thiếu và dừng.
+
 ## 0. NẠP TRƯỚC
 `../../rules/vietjet-group-marketing-operating-model.md` · `../../rules/vietjet-agent-collaboration.md` · `../../rules/vietjet-brand-safety.md` · `../../rules/vietjet-data-protection.md` · `../../rules/vietjet-source-and-expiry.md` · `references/market-profiles.md`
 

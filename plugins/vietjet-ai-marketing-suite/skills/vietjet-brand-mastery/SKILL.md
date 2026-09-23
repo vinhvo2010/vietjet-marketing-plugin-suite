@@ -5,6 +5,8 @@ description: "Soạn và review Key Visual demo, poster, banner hoặc prompt h�
 
 # 🎨 VIETJET BRAND MASTERY & KEY VISUAL GENERATION
 
+`PLUGIN_ROOT` là thư mục chứa `plugin.json` của bản plugin đang nạp skill này. Mọi đường dẫn `../../...` tính từ thư mục chứa chính `SKILL.md`, không từ thư mục dự án đang mở. Nếu host không nêu đường dẫn skill, lấy `source.path` của bản đang bật từ `codex plugin list --json`; kiểm tra `PLUGIN_ROOT/rules/00_INDEX.md` trước khi đọc. Không xác định được thì báo thiếu và dừng.
+
 ## 0. NẠP TRƯỚC — BẮT BUỘC
 `../../rules/vietjet-brand-safety.md` — đặc biệt **mục 2: Chuẩn thể hiện con người**.
 `../../rules/vietjet-source-and-expiry.md` mục 3 — đội tàu (nguồn sự thật duy nhất).

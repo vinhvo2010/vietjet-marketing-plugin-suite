@@ -49,3 +49,7 @@ Adds the Agent Plugins 1.0 root manifest, synchronizes the Codex compatibility m
 # v5.0.3 — Git marketplace refresh verification (2026-09-23)
 
 Documentation-only patch that clarifies the one-time install and subsequent marketplace refresh flow. This release intentionally changes no specialist behavior. It provides a second version for checking that an already-installed beta receives updates from the Git-backed marketplace without reinstalling.
+
+# v5.0.4 — Installed-skill path resolution (2026-09-23)
+
+Fixes a fresh-task failure where the squad skill looked for `rules/` under the user's current workspace instead of the installed plugin. All 24 skill entrypoints now establish `PLUGIN_ROOT` and resolve references against their own installed package. The generator remains the source of truth for 18 specialist entrypoints. No governance gate was relaxed.

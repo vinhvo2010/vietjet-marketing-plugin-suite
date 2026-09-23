@@ -1,6 +1,6 @@
 # Đưa 18 vai trò Vietjet Marketing AI lên plugin dùng chung
 
-Trạng thái ngày 23/09/2026: **bản thử nghiệm 5.0.3 qua marketplace Git**, không phải plugin đã được duyệt trong OpenAI Plugins Directory. Gói này chứa 18 vai trò chuyên môn dưới dạng 24 skill có thể gọi trong Codex; nó không chạy 18 agent tự động và không thay thế người phê duyệt. Nguồn thử nghiệm là repository GitHub công khai do tài khoản `vinhvo2010` quản lý: `https://github.com/vinhvo2010/vietjet-marketing-plugin-suite`. Marketplace và bản 5.0.2 đã được xác minh trực tiếp trên GitHub; bản 5.0.3 cần kiểm tra lại sau khi phát hành.
+Trạng thái ngày 23/09/2026: **bản thử nghiệm 5.0.4 qua marketplace Git**, không phải plugin đã được duyệt trong OpenAI Plugins Directory. Gói này chứa 18 vai trò chuyên môn dưới dạng 24 skill có thể gọi trong Codex; nó không chạy 18 agent tự động và không thay thế người phê duyệt. Nguồn thử nghiệm là repository GitHub công khai do tài khoản `vinhvo2010` quản lý: `https://github.com/vinhvo2010/vietjet-marketing-plugin-suite`. Bản 5.0.3 đã được xác minh trên GitHub và bài thử làm mới nguồn đã nâng bản cài trên Mac từ 5.0.2 lên 5.0.3 mà không cài lại. Bản vá 5.0.4 sửa đường dẫn quy chuẩn trong skill và cần kiểm tra lại sau phát hành.
 
 ## Hai đường phát hành
 

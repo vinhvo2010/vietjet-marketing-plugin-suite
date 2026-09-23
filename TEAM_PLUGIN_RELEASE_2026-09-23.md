@@ -1,15 +1,15 @@
 # Đưa 18 vai trò Vietjet Marketing AI lên plugin dùng chung
 
-Trạng thái ngày 23/09/2026: **bản thử nghiệm 5.0.4 qua marketplace Git**, không phải plugin đã được duyệt trong OpenAI Plugins Directory. Gói này chứa 18 vai trò chuyên môn dưới dạng 24 skill có thể gọi trong Codex; nó không chạy 18 agent tự động và không thay thế người phê duyệt. Nguồn thử nghiệm là repository GitHub công khai do tài khoản `vinhvo2010` quản lý: `https://github.com/vinhvo2010/vietjet-marketing-plugin-suite`. Bản 5.0.3 đã được xác minh trên GitHub và bài thử làm mới nguồn đã nâng bản cài trên Mac từ 5.0.2 lên 5.0.3 mà không cài lại. Bản vá 5.0.4 sửa đường dẫn quy chuẩn trong skill và cần kiểm tra lại sau phát hành.
+Trạng thái ngày 23/09/2026: **bản thử nghiệm 5.0.4 đã phát hành qua marketplace Git**, không phải plugin đã được duyệt trong OpenAI Plugins Directory. Gói này chứa 18 vai trò chuyên môn dưới dạng 24 skill có thể gọi trong Codex; nó không chạy 18 agent tự động và không thay thế người phê duyệt. Nguồn thử nghiệm là repository GitHub công khai do tài khoản `vinhvo2010` quản lý: `https://github.com/vinhvo2010/vietjet-marketing-plugin-suite`. Trên Mac, refresh đã nâng bản cài 5.0.2 → 5.0.3 → 5.0.4 mà không cài lại; trong task mới, skill đã đọc quy chuẩn từ plugin và trả đúng cổng phê duyệt. Chưa có thử nghiệm từ tài khoản độc lập.
 
 ## Hai đường phát hành
 
-1. **Team dùng Codex:** chủ sở hữu đưa nội dung thư mục `team-plugin-marketplace/` vào repository Git được phép chia sẻ với team. Người dùng thêm repository đó làm marketplace và cài plugin một lần. Các lần sau làm mới marketplace để nhận bản mới, rồi mở task mới. Repository hiện dự kiến công khai để người thử nghiệm không cần tài khoản GitHub; đây vẫn không phải niêm yết trong OpenAI Plugins Directory.
+1. **Team dùng Codex:** marketplace đã được đưa vào repository Git công khai. Người dùng thêm repository đó làm marketplace và cài plugin một lần. Các lần sau làm mới marketplace để nhận bản mới, rồi mở task mới. Người thử nghiệm không cần tài khoản GitHub để đọc repository công khai; đây vẫn không phải niêm yết trong OpenAI Plugins Directory.
 2. **Mọi tài khoản ChatGPT/Codex:** nộp plugin lên [OpenAI Plugin Directory](https://platform.openai.com/plugins) bằng tài khoản nhà phát hành đủ điều kiện, với website, hỗ trợ, quyền sử dụng thương hiệu/nội dung và chính sách riêng tư/điều khoản phù hợp. Sau rà soát và phát hành, người dùng mới có thể tìm/cài theo kênh công khai. Việc có ZIP hoặc connector ID chưa hoàn thành bước này.
 
 App/MCP hosted riêng chỉ cung cấp các công cụ đã đăng ký; 18 vai trò Codex và App/MCP **không tự đồng bộ phiên bản**. File `.app.json` của plugin tham chiếu connector ở chế độ phát triển; tài khoản khác có thể không nhìn thấy hoặc kết nối được cho tới khi App được chia sẻ/phát hành đúng cách. Không hứa `@` hoạt động cho mọi người ở giai đoạn này.
 
-## Cách team cài sau khi có repository được phê duyệt
+## Cách team cài lần đầu
 
 ```bash
 codex plugin marketplace add vinhvo2010/vietjet-marketing-plugin-suite
@@ -28,10 +28,10 @@ codex plugin marketplace upgrade vietjet-team
 
 Sau đó mở task mới và thử gọi skill có namespace. Đây là **một lệnh refresh + task mới**, không phải cập nhật nội dung trong task đang mở. Nếu máy vẫn hiện version cũ, kiểm tra `codex plugin list` và hướng dẫn cập nhật của bản Codex đang dùng; không xoá plugin cũ trước khi có bản sao lưu và thử nghiệm. Không giả định rằng mọi máy tự cập nhật tức thì hoặc App/MCP riêng cũng được cập nhật theo.
 
-## Cổng phát hành còn thiếu
+## Cổng còn thiếu trước khi mở rộng hoặc nộp Directory
 
 - Xác nhận ai có quyền phát hành tên, nhận diện và nội dung Vietjet; vì source hiện ghi giấy phép `Proprietary`.
-- Kiểm tra commit thực tế trên repository Git dùng chung; việc chuẩn bị ZIP không đồng nghĩa đã đưa bản mới lên GitHub. Nộp Directory là bước khác.
+- Bản beta Git đã có commit và đã kiểm tra cài/refresh trên Mac. Nộp Directory vẫn là bước khác, có xét duyệt riêng.
 - Chạy kiểm thử trên một tài khoản Codex **khác**: cài từ nguồn được chia sẻ, task mới, gọi skill; nếu dùng `@`, kiểm tra App và quyền kết nối trên tài khoản đó.
 - Rà soát từng thông tin hàng không/giá/lịch bay, dữ liệu cá nhân, pháp lý và nguồn Vietjet chính thức ở thời điểm sử dụng. Plugin chỉ hỗ trợ nghiên cứu, phân tích, nháp và review; không tự cấp quyền phát hành, chi tiền, đổi giá hoặc xử lý sự cố an toàn bay.
 

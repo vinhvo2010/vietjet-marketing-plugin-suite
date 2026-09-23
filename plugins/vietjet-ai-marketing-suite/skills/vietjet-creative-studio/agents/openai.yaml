@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Creative Studio"
+  short_description: "Create and review on-brand concepts"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-creative-studio to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

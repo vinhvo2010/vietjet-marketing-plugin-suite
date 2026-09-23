@@ -1,0 +1,1 @@
+{"name":"vercel","version":"1.0","type":"connector","status":"requires-configuration","env":["VERCEL_TOKEN"],"description":"Vercel project/deployment integration."}

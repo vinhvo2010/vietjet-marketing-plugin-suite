@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Marketing Science Experimentation"
+  short_description: "Measure incremental marketing impact"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-marketing-science-experimentation to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

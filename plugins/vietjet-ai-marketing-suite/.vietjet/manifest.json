@@ -1,0 +1,515 @@
+{
+  "suite": "vietjet-ai-marketing-suite",
+  "version": "5.0.2",
+  "agents": [
+    {
+      "name": "vietjet_cmo_orchestrator",
+      "role": "lead",
+      "description": "Điều phối Vietjet Group Marketing AI Team: khóa Mission Brief, chọn team nhỏ nhất trong 17 specialist, quản lý dependency/handoff, tổng hợp Decision Record và định tuyến cổng phê duyệt người thật.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "true",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/01_vietjet_cmo_orchestrator.md"
+    },
+    {
+      "name": "vietjet_performance_growth",
+      "role": "member",
+      "description": "Thiết kế và tối ưu quảng cáo chuyển đổi trên Meta, Google Search/PMax, TikTok Ads theo tải ghế thực tế. Sinh ma trận ad copy đa góc độ, chuẩn hoá UTM, và đề xuất quy tắc pacing/auto-scale. Đề xuất cấu hình ngân sách — KHÔNG bật chi tiêu thật.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/02_vietjet_performance_growth.md"
+    },
+    {
+      "name": "vietjet_creative_studio",
+      "role": "member",
+      "description": "Sinh ảnh Key Visual demo bằng generate_image, viết prompt sinh ảnh chuẩn nhận diện Vietjet, và xây storyboard video ngắn. Tuân thủ tuyệt đối chuẩn thể hiện con người; mọi KV có hình người cần người duyệt.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/03_vietjet_creative_studio.md"
+    },
+    {
+      "name": "vietjet_crm_skyjoy_ancillary",
+      "role": "member",
+      "description": "Thiết kế luồng Next-Best-Action bán chéo hành lý, suất ăn, chọn ghế, bảo hiểm; vòng đời CRM và chương trình SkyJoy. Bảo đảm minh bạch giá, không tick sẵn, và tuân thủ bảo vệ dữ liệu cá nhân.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/04_vietjet_crm_skyjoy_ancillary.md"
+    },
+    {
+      "name": "vietjet_pr_social_crisis",
+      "role": "member",
+      "description": "Lắng nghe mạng xã hội, phân loại khủng hoảng theo 5 cấp, SOẠN NHÁP (không phát hành) thông cáo và kịch bản Q&A. Tuyệt đối không phát ngôn về an toàn bay và không nêu nguyên nhân sự cố.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/05_vietjet_pr_social_crisis.md"
+    },
+    {
+      "name": "vietjet_market_intelligence",
+      "role": "member",
+      "description": "Theo dõi giá vé, tần suất, khuyến mãi và động thái của các hãng đối thủ; phân tích cấu trúc thị trường và cơ hội mở tuyến. Mọi dữ liệu đối thủ phải kèm ngày kiểm chứng và tuân quy tắc hạn dùng 30 ngày.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/06_vietjet_market_intelligence.md"
+    },
+    {
+      "name": "vietjet_bi_data_analyst",
+      "role": "member",
+      "description": "Truy vấn dữ liệu đặt vé qua NL2SQL, phân tích booking curve, đo lường attribution đa kênh và kiểm định ý nghĩa thống kê A/B test. Chỉ làm việc trên view tổng hợp đã loại dữ liệu định danh.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/07_vietjet_bi_data_analyst.md"
+    },
+    {
+      "name": "vietjet_revenue_management",
+      "role": "member",
+      "description": "Phân bổ dải giá vé và fare bucket, theo dõi booking curve, tính RASK/yield, và quyết định thời điểm mở khuyến mãi. Sở hữu quyết định giá; Marketing sở hữu việc truyền thông quyết định đó.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/08_vietjet_revenue_management.md"
+    },
+    {
+      "name": "vietjet_finance_cost_controller",
+      "role": "member",
+      "description": "Tính CASM và CASM non-fuel, chi phí nhiên liệu Jet A-1, khấu hao và chi phí thuê tàu bay, và kiểm toán độc lập mô hình P&L đường bay. Không bao giờ lấy giá nhiên liệu hay số tài chính từ trí nhớ.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/09_vietjet_finance_cost_controller.md"
+    },
+    {
+      "name": "vietjet_trade_distribution_sales",
+      "role": "member",
+      "description": "Quản trị kênh đại lý B2B, OTA, GDS và block vé series; tối ưu tỷ trọng kênh bán và chi phí phân phối; cân đối giữa kênh trực tiếp và kênh trung gian.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/10_vietjet_trade_distribution_sales.md"
+    },
+    {
+      "name": "vietjet_flight_ops_network_planner",
+      "role": "member",
+      "description": "Tính tải thương mại (payload), tầm bay, thời gian quay đầu, phân bổ đội tàu và slot bay. Là nguồn xác nhận loại tàu cho mọi nội dung marketing. Không kết luận thay bộ phận Khai thác.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/11_vietjet_flight_ops_network_planner.md"
+    },
+    {
+      "name": "vietjet_legal_regulatory_compliance",
+      "role": "member",
+      "description": "Rà soát sơ bộ pháp lý mở tuyến (hiệp định song phương, thương quyền) và tuân thủ quy chế quảng cáo/giá vé theo từng thị trường (CAAV, ACCC, DGCA...). Rà soát bằng AI, không thay thế tư vấn pháp lý chính thức.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/12_vietjet_legal_regulatory_compliance.md"
+    },
+    {
+      "name": "vietjet_group_brand_portfolio_strategist",
+      "role": "member",
+      "description": "Thiết kế brand architecture, value proposition và portfolio choices cho Vietjet Group; cân bằng tính nhất quán toàn nhóm với khác biệt pháp nhân, point of sale, source market và route corridor.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/13_vietjet_group_brand_portfolio_strategist.md"
+    },
+    {
+      "name": "vietjet_customer_journey_experience",
+      "role": "member",
+      "description": "Thiết kế hành trình khách hàng end-to-end từ khám phá, đặt vé, thanh toán, pre-flight, sân bay, chuyến bay đến disruption, recovery và mua lại; kiểm tra promise-to-delivery.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/14_vietjet_customer_journey_experience.md"
+    },
+    {
+      "name": "vietjet_marketing_science_experimentation",
+      "role": "reviewer",
+      "description": "Thiết kế hệ đo lường causal, incrementality experiment, calibrated MMM và guardrail; phân biệt correlation, attribution và tác động tăng thêm trước khi scale ngân sách.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/15_vietjet_marketing_science_experimentation.md"
+    },
+    {
+      "name": "vietjet_content_organic_discovery",
+      "role": "member",
+      "description": "Vận hành content supply chain cho SEO, GEO và AEO từ customer job, keyword/entity research, outline, draft, fact review, structured knowledge đến đo lường organic discovery.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/16_vietjet_content_organic_discovery.md"
+    },
+    {
+      "name": "vietjet_martech_ai_operations",
+      "role": "reviewer",
+      "description": "Thiết kế và kiểm soát MarTech/AI operating layer: registry, quyền tối thiểu, audit log, prompt/model version, approval token, release packet, observability, rollback và kill-switch.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/17_vietjet_martech_ai_operations.md"
+    },
+    {
+      "name": "vietjet_market_pod_lead",
+      "role": "member",
+      "description": "Dẫn dắt market pod được tham số hóa theo operating entity, point of sale, source market hoặc route corridor; chuyển chiến lược Group thành local plan có native, legal và commercial validation.",
+      "enable_write_tools": "true",
+      "enable_subagent_tools": "false",
+      "enable_mcp_tools": "true",
+      "version": "5.0",
+      "path": "agents/18_vietjet_market_pod_lead.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "vietjet-ancillary-revenue-booster",
+      "description": "Thiết kế luồng Next-Best-Action bán chéo dịch vụ phụ trợ Vietjet Air — hành lý ký gửi, suất ăn, chọn ghế, bảo hiểm, ưu tiên — và tích hợp SkyJoy. Dùng khi cần tăng doanh thu ancillary trên mỗi khách, thiết kế offer theo hành trình đặt vé, hoặc kiểm tra một luồng upsell có minh bạch và hợp quy không.",
+      "path": "skills/vietjet-ancillary-revenue-booster/SKILL.md"
+    },
+    {
+      "name": "vietjet-bi-data-analyst",
+      "description": "Truy vấn dữ liệu đặt vé qua NL2SQL, phân tích booking curve, đo lường attribution đa kênh và kiểm định ý nghĩa thống kê A/B test. Chỉ làm việc trên view tổng hợp đã loại dữ liệu định danh. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Analyze aggregate commercial data safely",
+      "path": "skills/vietjet-bi-data-analyst/SKILL.md"
+    },
+    {
+      "name": "vietjet-brand-mastery",
+      "description": "Soạn và review Key Visual demo, poster, banner hoặc prompt hình ảnh Vietjet; đối chiếu brandbook do người dùng cung cấp và đánh dấu phần chưa xác minh. Bao gồm quy tắc thể hiện con người và điều kiện duyệt trước phát hành; không chứng nhận thiết kế đạt chuẩn thương hiệu.",
+      "path": "skills/vietjet-brand-mastery/SKILL.md"
+    },
+    {
+      "name": "vietjet-campaign-orchestration",
+      "description": "SOP điều phối chiến dịch thương mại Vietjet Air theo tải ghế — quy tắc pacing, cấu trúc flash sale và vé khuyến mãi hợp quy, chuẩn UTM và khung đo lường, quy tắc auto-scale/auto-kill. Dùng khi lập chiến dịch đẩy tải, flash sale, mở tuyến, hoặc khi cần quyết định tăng/giảm ngân sách theo booking curve.",
+      "path": "skills/vietjet-campaign-orchestration/SKILL.md"
+    },
+    {
+      "name": "vietjet-cmo-orchestrator",
+      "description": "Điều phối Vietjet Group Marketing AI Team: khóa Mission Brief, chọn team nhỏ nhất trong 17 specialist, quản lý dependency/handoff, tổng hợp Decision Record và định tuyến cổng phê duyệt người thật. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Coordinate governed commercial decisions",
+      "path": "skills/vietjet-cmo-orchestrator/SKILL.md"
+    },
+    {
+      "name": "vietjet-content-organic-discovery",
+      "description": "Vận hành content supply chain cho SEO, GEO và AEO từ customer job, keyword/entity research, outline, draft, fact review, structured knowledge đến đo lường organic discovery. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Build SEO GEO and AEO content",
+      "path": "skills/vietjet-content-organic-discovery/SKILL.md"
+    },
+    {
+      "name": "vietjet-creative-studio",
+      "description": "Sinh ảnh Key Visual demo bằng generate_image, viết prompt sinh ảnh chuẩn nhận diện Vietjet, và xây storyboard video ngắn. Tuân thủ tuyệt đối chuẩn thể hiện con người; mọi KV có hình người cần người duyệt. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Create and review on-brand concepts",
+      "path": "skills/vietjet-creative-studio/SKILL.md"
+    },
+    {
+      "name": "vietjet-crisis-shield",
+      "description": "Quy chuẩn phân loại và phản ứng khủng hoảng truyền thông hàng không Vietjet Air — 5 cấp độ từ nhiễu thông tin tới tai nạn, mẫu holding statement điền sẵn, cây thông báo, và ranh giới tuyệt đối về phát ngôn an toàn bay. Dùng khi có chậm/huỷ chuyến, sự cố, tin đồn lan truyền, hoặc bất kỳ tình huống nào có thể ảnh hưởng uy tín hãng.",
+      "path": "skills/vietjet-crisis-shield/SKILL.md"
+    },
+    {
+      "name": "vietjet-crm-skyjoy-ancillary",
+      "description": "Thiết kế luồng Next-Best-Action bán chéo hành lý, suất ăn, chọn ghế, bảo hiểm; vòng đời CRM và chương trình SkyJoy. Bảo đảm minh bạch giá, không tick sẵn, và tuân thủ bảo vệ dữ liệu cá nhân. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Design CRM and ancillary journeys",
+      "path": "skills/vietjet-crm-skyjoy-ancillary/SKILL.md"
+    },
+    {
+      "name": "vietjet-customer-journey-experience",
+      "description": "Thiết kế hành trình khách hàng end-to-end từ khám phá, đặt vé, thanh toán, pre-flight, sân bay, chuyến bay đến disruption, recovery và mua lại; kiểm tra promise-to-delivery. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Design promise-to-delivery journeys",
+      "path": "skills/vietjet-customer-journey-experience/SKILL.md"
+    },
+    {
+      "name": "vietjet-finance-cost-controller",
+      "description": "Tính CASM và CASM non-fuel, chi phí nhiên liệu Jet A-1, khấu hao và chi phí thuê tàu bay, và kiểm toán độc lập mô hình P&L đường bay. Không bao giờ lấy giá nhiên liệu hay số tài chính từ trí nhớ. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Audit route and campaign economics",
+      "path": "skills/vietjet-finance-cost-controller/SKILL.md"
+    },
+    {
+      "name": "vietjet-flight-ops-network-planner",
+      "description": "Tính tải thương mại (payload), tầm bay, thời gian quay đầu, phân bổ đội tàu và slot bay. Là nguồn xác nhận loại tàu cho mọi nội dung marketing. Không kết luận thay bộ phận Khai thác. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Validate network and fleet assumptions",
+      "path": "skills/vietjet-flight-ops-network-planner/SKILL.md"
+    },
+    {
+      "name": "vietjet-global-localization",
+      "description": "Bản địa hoá nội dung marketing Vietjet Air cho các thị trường quốc tế — ngôn ngữ, văn hoá, tôn giáo, quy định quảng cáo và giá vé theo từng nước. Dùng khi đưa một chiến dịch sang thị trường mới, dịch nội dung, kiểm tra yếu tố văn hoá có phù hợp không, hoặc lên lịch theo mùa vụ/lễ hội địa phương.",
+      "path": "skills/vietjet-global-localization/SKILL.md"
+    },
+    {
+      "name": "vietjet-group-brand-portfolio-strategist",
+      "description": "Thiết kế brand architecture, value proposition và portfolio choices cho Vietjet Group; cân bằng tính nhất quán toàn nhóm với khác biệt pháp nhân, point of sale, source market và route corridor. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Shape group brand and portfolio choices",
+      "path": "skills/vietjet-group-brand-portfolio-strategist/SKILL.md"
+    },
+    {
+      "name": "vietjet-legal-regulatory-compliance",
+      "description": "Rà soát sơ bộ pháp lý mở tuyến (hiệp định song phương, thương quyền) và tuân thủ quy chế quảng cáo/giá vé theo từng thị trường (CAAV, ACCC, DGCA...). Rà soát bằng AI, không thay thế tư vấn pháp lý chính thức. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Review airline marketing compliance",
+      "path": "skills/vietjet-legal-regulatory-compliance/SKILL.md"
+    },
+    {
+      "name": "vietjet-market-intelligence",
+      "description": "Theo dõi giá vé, tần suất, khuyến mãi và động thái của các hãng đối thủ; phân tích cấu trúc thị trường và cơ hội mở tuyến. Mọi dữ liệu đối thủ phải kèm ngày kiểm chứng và tuân quy tắc hạn dùng 30 ngày. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Research airline markets with evidence",
+      "path": "skills/vietjet-market-intelligence/SKILL.md"
+    },
+    {
+      "name": "vietjet-market-pod-lead",
+      "description": "Dẫn dắt market pod được tham số hóa theo operating entity, point of sale, source market hoặc route corridor; chuyển chiến lược Group thành local plan có native, legal và commercial validation. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Lead evidence-backed local market pods",
+      "path": "skills/vietjet-market-pod-lead/SKILL.md"
+    },
+    {
+      "name": "vietjet-marketing-science-experimentation",
+      "description": "Thiết kế hệ đo lường causal, incrementality experiment, calibrated MMM và guardrail; phân biệt correlation, attribution và tác động tăng thêm trước khi scale ngân sách. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Measure incremental marketing impact",
+      "path": "skills/vietjet-marketing-science-experimentation/SKILL.md"
+    },
+    {
+      "name": "vietjet-marketing-squad",
+      "description": "Kích hoạt Vietjet Group Marketing AI Team gồm 18 specialist với mission schema, dependency waves, handoff contract, independent review và human approval. Dùng cho route launch, chiến dịch, lifecycle, market plan, crisis readiness hoặc quyết định đa chức năng; không dùng cho nhiệm vụ hẹp chỉ cần một specialist.",
+      "path": "skills/vietjet-marketing-squad/SKILL.md"
+    },
+    {
+      "name": "vietjet-martech-ai-operations",
+      "description": "Thiết kế và kiểm soát MarTech/AI operating layer: registry, quyền tối thiểu, audit log, prompt/model version, approval token, release packet, observability, rollback và kill-switch. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Govern MarTech and AI operations",
+      "path": "skills/vietjet-martech-ai-operations/SKILL.md"
+    },
+    {
+      "name": "vietjet-performance-growth",
+      "description": "Thiết kế và tối ưu quảng cáo chuyển đổi trên Meta, Google Search/PMax, TikTok Ads theo tải ghế thực tế. Sinh ma trận ad copy đa góc độ, chuẩn hoá UTM, và đề xuất quy tắc pacing/auto-scale. Đề xuất cấu hình ngân sách — KHÔNG bật chi tiêu thật. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Plan measurable paid growth safely",
+      "path": "skills/vietjet-performance-growth/SKILL.md"
+    },
+    {
+      "name": "vietjet-pr-social-crisis",
+      "description": "Lắng nghe mạng xã hội, phân loại khủng hoảng theo 5 cấp, SOẠN NHÁP (không phát hành) thông cáo và kịch bản Q&A. Tuyệt đối không phát ngôn về an toàn bay và không nêu nguyên nhân sự cố. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Draft governed PR and crisis responses",
+      "path": "skills/vietjet-pr-social-crisis/SKILL.md"
+    },
+    {
+      "name": "vietjet-revenue-management",
+      "description": "Phân bổ dải giá vé và fare bucket, theo dõi booking curve, tính RASK/yield, và quyết định thời điểm mở khuyến mãi. Sở hữu quyết định giá; Marketing sở hữu việc truyền thông quyết định đó. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Frame yield and pricing decisions",
+      "path": "skills/vietjet-revenue-management/SKILL.md"
+    },
+    {
+      "name": "vietjet-trade-distribution-sales",
+      "description": "Quản trị kênh đại lý B2B, OTA, GDS và block vé series; tối ưu tỷ trọng kênh bán và chi phí phân phối; cân đối giữa kênh trực tiếp và kênh trung gian. Dùng specialist này cho nhiệm vụ hẹp thuộc đúng vai trò; dùng vietjet-marketing-squad khi cần phối hợp nhiều chuyên môn.",
+      "metadata": "",
+      "short-description": "Plan agency and distribution channels",
+      "path": "skills/vietjet-trade-distribution-sales/SKILL.md"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Vietjet AI Marketing — Rules Index",
+      "trigger": "always_on",
+      "version": "5.0",
+      "path": "rules/00_INDEX.md"
+    },
+    {
+      "title": "Agent Collaboration and Handoff Contract",
+      "trigger": "always_on",
+      "version": "5.0",
+      "applies_to": "all_agents",
+      "path": "rules/vietjet-agent-collaboration.md"
+    },
+    {
+      "title": "Brand Safety & Chuẩn thể hiện hình ảnh",
+      "trigger": "always_on",
+      "version": "3.0",
+      "applies_to": "[creative_studio, performance_growth, pr_social_crisis, crm_skyjoy_ancillary, global_localization]",
+      "path": "rules/vietjet-brand-safety.md"
+    },
+    {
+      "title": "Quy tắc Toàn vẹn Dữ liệu",
+      "trigger": "always_on",
+      "version": "3.0",
+      "applies_to": "all_agents",
+      "path": "rules/vietjet-data-integrity.md"
+    },
+    {
+      "title": "Bảo vệ dữ liệu cá nhân & Rào chắn truy vấn",
+      "trigger": "always_on",
+      "version": "5.0",
+      "applies_to": "[bi_data_analyst, crm_skyjoy_ancillary, performance_growth, trade_distribution_sales]",
+      "path": "rules/vietjet-data-protection.md"
+    },
+    {
+      "title": "Vietjet Delivery Standard",
+      "trigger": "always_on",
+      "version": "5.0",
+      "path": "rules/vietjet-delivery-standard.md"
+    },
+    {
+      "title": "Cổng phê duyệt & Thẩm quyền",
+      "trigger": "always_on",
+      "version": "5.0",
+      "applies_to": "all_agents",
+      "path": "rules/vietjet-governance-gates.md"
+    },
+    {
+      "title": "Vietjet Group Marketing Operating Model",
+      "trigger": "always_on",
+      "version": "5.0",
+      "applies_to": "all_agents",
+      "path": "rules/vietjet-group-marketing-operating-model.md"
+    },
+    {
+      "title": "Đăng ký nguồn, hạn dùng dữ liệu & Đội tàu",
+      "trigger": "always_on",
+      "version": "5.0",
+      "path": "rules/vietjet-source-and-expiry.md"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "airline-commerce",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "VJAI_COMMERCE_ENDPOINT",
+        "VJAI_COMMERCE_READ_TOKEN"
+      ],
+      "description": "Read-only offer, order, fare, inventory, payment and service-status views for airline retail decisions. Price, inventory, order and refund writes are never enabled by this blueprint."
+    },
+    {
+      "name": "canva",
+      "version": "1.0",
+      "type": "capability",
+      "status": "host-dependent",
+      "binding": "runtime-host",
+      "description": "Design creation/editing binding for KV, social assets and presentations when the host provides Canva."
+    },
+    {
+      "name": "customer-data-platform",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "VJAI_CDP_ENDPOINT",
+        "VJAI_CDP_READ_TOKEN"
+      ],
+      "description": "Approved aggregate audience and lifecycle binding. Raw identity fields, small cohorts and activation writes remain disabled until privacy and human approval controls are verified."
+    },
+    {
+      "name": "github",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "GITHUB_TOKEN"
+      ],
+      "description": "Repository, issues, pull requests and CI/CD integration."
+    },
+    {
+      "name": "google-workspace",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "GOOGLE_APPLICATION_CREDENTIALS"
+      ],
+      "description": "Drive/Docs/Sheets/Calendar/Gmail integration via organization-approved credentials."
+    },
+    {
+      "name": "higgsfield",
+      "version": "1.0",
+      "type": "capability",
+      "status": "host-dependent",
+      "binding": "runtime-host",
+      "description": "Creative image/video generation binding when the host provides Higgsfield."
+    },
+    {
+      "name": "image-generation",
+      "version": "1.0",
+      "type": "capability",
+      "status": "host-dependent",
+      "binding": "runtime-host",
+      "description": "Creative KV/image generation; host must bind an image generation tool."
+    },
+    {
+      "name": "marketing-measurement",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "VJAI_ANALYTICS_ENDPOINT",
+        "VJAI_ANALYTICS_READ_TOKEN"
+      ],
+      "description": "Aggregate product, campaign and experiment measurement binding. Default must be read-only, PII-free and allow-listed; attribution is diagnostic, not causal proof."
+    },
+    {
+      "name": "paid-media",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "META_ACCESS_TOKEN",
+        "GOOGLE_ADS_DEVELOPER_TOKEN",
+        "TIKTOK_ACCESS_TOKEN"
+      ],
+      "description": "Meta/Google/TikTok advertising bindings. Write/spend actions must remain human-approved under governance gates."
+    },
+    {
+      "name": "vercel",
+      "version": "1.0",
+      "type": "connector",
+      "status": "requires-configuration",
+      "env": [
+        "VERCEL_TOKEN"
+      ],
+      "description": "Vercel project/deployment integration."
+    },
+    {
+      "name": "web-search",
+      "version": "1.0",
+      "type": "capability",
+      "status": "host-dependent",
+      "binding": "runtime-host",
+      "description": "Fresh public web research; host must provide a web search tool."
+    }
+  ]
+}

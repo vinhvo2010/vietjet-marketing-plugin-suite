@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Legal Regulatory Compliance"
+  short_description: "Review airline marketing compliance"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-legal-regulatory-compliance to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Flight Ops Network Planner"
+  short_description: "Validate network and fleet assumptions"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-flight-ops-network-planner to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

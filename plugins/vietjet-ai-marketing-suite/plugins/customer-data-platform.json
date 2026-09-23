@@ -1,0 +1,8 @@
+{
+  "name": "customer-data-platform",
+  "version": "1.0",
+  "type": "connector",
+  "status": "requires-configuration",
+  "env": ["VJAI_CDP_ENDPOINT", "VJAI_CDP_READ_TOKEN"],
+  "description": "Approved aggregate audience and lifecycle binding. Raw identity fields, small cohorts and activation writes remain disabled until privacy and human approval controls are verified."
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Marketing Squad"
+  short_description: "Coordinate the full commercial specialist team"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-marketing-squad to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

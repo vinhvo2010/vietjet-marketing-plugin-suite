@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Trade Distribution Sales"
+  short_description: "Plan agency and distribution channels"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-trade-distribution-sales to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

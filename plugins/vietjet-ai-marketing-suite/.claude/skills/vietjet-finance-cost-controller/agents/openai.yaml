@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Finance Cost Controller"
+  short_description: "Audit route and campaign economics"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-finance-cost-controller to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

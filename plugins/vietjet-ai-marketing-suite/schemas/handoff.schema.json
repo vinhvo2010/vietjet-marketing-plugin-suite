@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vietjet.example/schemas/handoff.schema.json",
+  "title": "Vietjet Specialist Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "decision", "evidence", "output", "approvals", "next"],
+  "properties": {
+    "status": {"enum": ["READY", "PARTIAL", "BLOCKED_INPUT", "BLOCKED_APPROVAL", "ESCALATED"]},
+    "decision": {"type": "string"},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "output": {},
+    "approvals": {"type": "array", "items": {"type": "string"}},
+    "next": {"type": "string", "minLength": 1}
+  }
+}

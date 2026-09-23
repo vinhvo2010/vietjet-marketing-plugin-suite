@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Brand Mastery"
+  short_description: "Create and review Vietjet brand assets"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-brand-mastery to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,8 @@
+{
+  "name": "marketing-measurement",
+  "version": "1.0",
+  "type": "connector",
+  "status": "requires-configuration",
+  "env": ["VJAI_ANALYTICS_ENDPOINT", "VJAI_ANALYTICS_READ_TOKEN"],
+  "description": "Aggregate product, campaign and experiment measurement binding. Default must be read-only, PII-free and allow-listed; attribution is diagnostic, not causal proof."
+}

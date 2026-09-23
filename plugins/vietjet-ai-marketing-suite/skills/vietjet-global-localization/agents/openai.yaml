@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Global Localization"
+  short_description: "Localize campaigns by market context"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-global-localization to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

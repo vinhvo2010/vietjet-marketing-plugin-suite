@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Performance Growth"
+  short_description: "Plan measurable paid growth safely"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-performance-growth to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

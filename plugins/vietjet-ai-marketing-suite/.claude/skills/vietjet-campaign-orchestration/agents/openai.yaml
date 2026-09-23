@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Campaign Orchestration"
+  short_description: "Plan governed load-led campaigns"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-campaign-orchestration to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

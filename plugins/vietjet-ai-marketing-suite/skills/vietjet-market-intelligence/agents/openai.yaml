@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Market Intelligence"
+  short_description: "Research airline markets with evidence"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-market-intelligence to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

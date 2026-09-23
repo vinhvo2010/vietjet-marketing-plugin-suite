@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vietjet.example/schemas/mission-brief.schema.json",
+  "title": "Vietjet AI Marketing Mission Brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mission_id", "objective", "decision_required", "market", "market_scope_type", "risk_tier"],
+  "properties": {
+    "mission_id": {"type": "string", "minLength": 3, "maxLength": 80},
+    "objective": {"type": "string", "minLength": 10},
+    "decision_required": {"type": "string", "minLength": 5},
+    "operating_entity": {"type": "string"},
+    "market": {"type": "string", "minLength": 2},
+    "market_scope_type": {
+      "enum": ["operating_entity", "point_of_sale", "source_market", "route_corridor"]
+    },
+    "risk_tier": {"enum": ["low", "medium", "high", "critical"]},
+    "route_or_corridor": {"type": "string"},
+    "deadline": {"type": "string"},
+    "requested_outputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "constraints": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

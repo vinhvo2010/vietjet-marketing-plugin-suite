@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet BI Data Analyst"
+  short_description: "Analyze aggregate commercial data safely"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-bi-data-analyst to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

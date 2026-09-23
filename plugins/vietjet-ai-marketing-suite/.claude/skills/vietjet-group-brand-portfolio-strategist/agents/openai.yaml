@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Group Brand Portfolio Strategist"
+  short_description: "Shape group brand and portfolio choices"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-group-brand-portfolio-strategist to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

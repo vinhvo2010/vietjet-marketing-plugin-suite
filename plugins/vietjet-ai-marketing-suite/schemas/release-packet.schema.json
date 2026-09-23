@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vietjet.example/schemas/release-packet.schema.json",
+  "title": "Vietjet Marketing Release Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mission_id", "artifact_id", "artifact_hash", "target", "claims", "approval_evidence", "rollback_plan", "release_owner", "status"],
+  "properties": {
+    "mission_id": {"type": "string", "minLength": 3},
+    "artifact_id": {"type": "string", "minLength": 2},
+    "artifact_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "target": {"type": "string", "minLength": 2},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "evidence_id"],
+        "properties": {
+          "claim": {"type": "string"},
+          "evidence_id": {"type": "string"}
+        }
+      }
+    },
+    "approval_evidence": {"type": "array", "items": {"type": "string"}},
+    "rollback_plan": {"type": "string", "minLength": 3},
+    "kill_switch_owner": {"type": "string"},
+    "release_owner": {"type": "string", "minLength": 1},
+    "status": {"enum": ["DRAFT", "BLOCKED_INPUT", "BLOCKED_APPROVAL", "APPROVED_FOR_NAMED_TARGET", "RELEASED", "ROLLED_BACK"]}
+  }
+}

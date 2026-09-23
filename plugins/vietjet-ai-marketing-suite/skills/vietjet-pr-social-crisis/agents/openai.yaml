@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet PR Social Crisis"
+  short_description: "Draft governed PR and crisis responses"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-pr-social-crisis to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

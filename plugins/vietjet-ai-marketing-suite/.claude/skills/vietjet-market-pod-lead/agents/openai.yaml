@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Market Pod Lead"
+  short_description: "Lead evidence-backed local market pods"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-market-pod-lead to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

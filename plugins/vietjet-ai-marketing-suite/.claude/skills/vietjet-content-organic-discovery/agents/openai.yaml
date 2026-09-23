@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Content Organic Discovery"
+  short_description: "Build SEO GEO and AEO content"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-content-organic-discovery to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

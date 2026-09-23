@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Revenue Management"
+  short_description: "Frame yield and pricing decisions"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-revenue-management to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,14 @@
+{
+  "mission_id": "VJ-MISSION-DEMO-001",
+  "objective": "Prepare an evidence-backed go-to-market recommendation for a new international route without publishing or spending money.",
+  "decision_required": "Go, revise, or stop before BOD review",
+  "operating_entity": "[CẦN XÁC MINH — Thương mại]",
+  "market": "Vietnam–India",
+  "market_scope_type": "route_corridor",
+  "risk_tier": "high",
+  "route_or_corridor": "[SỐ LIỆU MINH HỌA — replace with approved airport pair]",
+  "deadline": "[CẦN XÁC MINH — mission owner]",
+  "requested_outputs": ["decision record", "evidence ledger", "offer architecture", "experiment plan", "approval map"],
+  "evidence_refs": [],
+  "constraints": ["No public release", "No real spend", "No unverified fare or schedule claims"]
+}

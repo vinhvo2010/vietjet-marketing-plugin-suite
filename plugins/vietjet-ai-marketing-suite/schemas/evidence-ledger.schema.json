@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vietjet.example/schemas/evidence-ledger.schema.json",
+  "title": "Vietjet Evidence Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mission_id", "entries"],
+  "properties": {
+    "mission_id": {"type": "string", "minLength": 3},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "claim_type", "claim", "data_label", "source_ref", "checked_at", "owner"],
+        "properties": {
+          "claim_id": {"type": "string", "minLength": 2},
+          "claim_type": {"enum": ["OBSERVED", "INFERENCE", "PROPOSAL"]},
+          "claim": {"type": "string", "minLength": 3},
+          "data_label": {"enum": ["VERIFIED", "ILLUSTRATIVE", "NEEDS_VERIFICATION"]},
+          "source_ref": {"type": "string", "minLength": 1},
+          "checked_at": {"type": "string", "minLength": 1},
+          "expires_at": {"type": "string"},
+          "owner": {"type": "string", "minLength": 1},
+          "limitations": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

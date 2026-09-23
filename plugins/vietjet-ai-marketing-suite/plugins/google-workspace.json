@@ -1,0 +1,1 @@
+{"name":"google-workspace","version":"1.0","type":"connector","status":"requires-configuration","env":["GOOGLE_APPLICATION_CREDENTIALS"],"description":"Drive/Docs/Sheets/Calendar/Gmail integration via organization-approved credentials."}

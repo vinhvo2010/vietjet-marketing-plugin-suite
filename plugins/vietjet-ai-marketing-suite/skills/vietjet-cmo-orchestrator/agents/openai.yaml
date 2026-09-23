@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet CMO Orchestrator"
+  short_description: "Coordinate governed commercial decisions"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-cmo-orchestrator to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

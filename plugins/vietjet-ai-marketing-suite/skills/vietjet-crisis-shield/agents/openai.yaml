@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Crisis Shield"
+  short_description: "Draft safe airline crisis responses"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-crisis-shield to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

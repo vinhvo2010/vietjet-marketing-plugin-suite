@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vietjet Customer Journey Experience"
+  short_description: "Design promise-to-delivery journeys"
+  brand_color: "#E30613"
+  default_prompt: "Use $vietjet-customer-journey-experience to produce an evidence-backed, approval-aware deliverable."
+policy:
+  allow_implicit_invocation: true

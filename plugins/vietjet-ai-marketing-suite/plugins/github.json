@@ -1,0 +1,1 @@
+{"name":"github","version":"1.0","type":"connector","status":"requires-configuration","env":["GITHUB_TOKEN"],"description":"Repository, issues, pull requests and CI/CD integration."}

@@ -1,0 +1,1 @@
+{"name":"paid-media","version":"1.0","type":"connector","status":"requires-configuration","env":["META_ACCESS_TOKEN","GOOGLE_ADS_DEVELOPER_TOKEN","TIKTOK_ACCESS_TOKEN"],"description":"Meta/Google/TikTok advertising bindings. Write/spend actions must remain human-approved under governance gates."}

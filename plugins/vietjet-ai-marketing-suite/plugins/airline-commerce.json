@@ -1,0 +1,8 @@
+{
+  "name": "airline-commerce",
+  "version": "1.0",
+  "type": "connector",
+  "status": "requires-configuration",
+  "env": ["VJAI_COMMERCE_ENDPOINT", "VJAI_COMMERCE_READ_TOKEN"],
+  "description": "Read-only offer, order, fare, inventory, payment and service-status views for airline retail decisions. Price, inventory, order and refund writes are never enabled by this blueprint."
+}

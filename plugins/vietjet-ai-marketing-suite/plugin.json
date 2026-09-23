@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vietjet-ai-marketing-suite",
+  "version": "5.0.2",
+  "description": "A coordinated, evidence-first Group Marketing AI Team for governed airline strategy, retailing, activation, customer experience and measurement.",
+  "author": {
+    "name": "Vietjet AI Marketing Team"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "vietjet",
+    "airline-marketing",
+    "commercial-planning",
+    "governance",
+    "agent-workflow"
+  ],
+  "extensions": {
+    "com.openai": {
+      "apps": "./.app.json",
+      "interface": {
+        "displayName": "Vietjet AI Marketing Suite",
+        "shortDescription": "Vietjet Group Marketing AI Team",
+        "longDescription": "Twenty-four discoverable skills covering eighteen coordinated specialist roles and six cross-functional workflows. Outputs are drafts or plans and require responsible human review before use.",
+        "developerName": "Vietjet AI Marketing Team",
+        "category": "Productivity",
+        "capabilities": [
+          "Research",
+          "Analysis",
+          "Drafting",
+          "Review"
+        ],
+        "brandColor": "#E30613",
+        "defaultPrompt": [
+          "Build an evidence-first campaign brief for a route.",
+          "Review this marketing claim for data and approval risks.",
+          "Coordinate the Vietjet specialist squad on this launch."
+        ]
+      }
+    }
+  }
+}

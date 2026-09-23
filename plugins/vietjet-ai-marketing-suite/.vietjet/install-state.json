@@ -1,0 +1,9 @@
+{
+  "installed": true,
+  "version": "5.0.0",
+  "agents": 18,
+  "skills": 24,
+  "rules": 9,
+  "connectors": 11,
+  "project_root": "."
+}

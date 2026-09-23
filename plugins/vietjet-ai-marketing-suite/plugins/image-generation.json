@@ -1,0 +1,1 @@
+{"name":"image-generation","version":"1.0","type":"capability","status":"host-dependent","binding":"runtime-host","description":"Creative KV/image generation; host must bind an image generation tool."}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vietjet.example/schemas/decision-record.schema.json",
+  "title": "Vietjet Marketing Decision Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mission_id", "status", "decision_required", "recommendation", "options", "tradeoffs", "evidence_ids", "owner", "approvals", "next_action"],
+  "properties": {
+    "mission_id": {"type": "string", "minLength": 3},
+    "status": {"enum": ["READY", "PARTIAL", "BLOCKED_INPUT", "BLOCKED_APPROVAL", "ESCALATED"]},
+    "decision_required": {"type": "string", "minLength": 3},
+    "recommendation": {"type": "string", "minLength": 3},
+    "options": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "tradeoffs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "evidence_ids": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "owner": {"type": "string", "minLength": 1},
+    "approvals": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "string", "minLength": 1},
+    "deadline": {"type": "string"}
+  }
+}

@@ -10,7 +10,7 @@ from check_output import check_text
 def main():
     plugin = json.loads((ROOT / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
     assert plugin["name"] == "vietjet-ai-marketing-suite"
-    assert plugin["version"].split("+", 1)[0] == "5.0.2"
+    assert plugin["version"].split("+", 1)[0] == "5.0.3"
     assert len(plugin["interface"]["defaultPrompt"]) <= 3
     assert len(list((ROOT / "agents").glob("*.md"))) == 18
     assert len(list((ROOT / "skills").glob("*/SKILL.md"))) == 24

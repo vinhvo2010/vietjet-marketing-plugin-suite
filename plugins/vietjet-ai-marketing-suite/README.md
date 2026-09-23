@@ -1,4 +1,4 @@
-# Vietjet AI Marketing Suite v5.0.2
+# Vietjet AI Marketing Suite v5.0.3
 
 Vietjet Group Marketing Operating System dạng local plugin: **18 canonical agent contracts**, **24 discoverable skills**, deterministic Team Router, typed mission/handoff/experiment objects, nine governance rules, eleven connector blueprints và bộ kiểm thử không cần dependency ngoài.
 
@@ -6,7 +6,7 @@ V5 tham chiếu app MCP đã đăng ký qua `.app.json`, connector ID `asdk_app_
 
 ## Phân phối cho team
 
-`plugin.json` là manifest Agent Plugins 1.0; `.codex-plugin/plugin.json` giữ tương thích với Codex cũ. Bộ 18 vai trò được gọi qua 24 skill, không phải 18 agent tự chạy. Bản 5.0.2 là thử nghiệm qua marketplace Git, chưa qua duyệt OpenAI Plugins Directory và chưa được thử trên tài khoản độc lập. Hướng dẫn cài/cập nhật nằm trong `TEAM_PLUGIN_RELEASE_2026-09-23.md` ở gốc marketplace dùng chung.
+`plugin.json` là manifest Agent Plugins 1.0; `.codex-plugin/plugin.json` giữ tương thích với Codex cũ. Bộ 18 vai trò được gọi qua 24 skill, không phải 18 agent tự chạy. Bản 5.0.3 là thử nghiệm qua marketplace Git, chưa qua duyệt OpenAI Plugins Directory và chưa được thử trên tài khoản độc lập. Hướng dẫn cài/cập nhật nằm trong `TEAM_PLUGIN_RELEASE_2026-09-23.md` ở gốc marketplace dùng chung. Sau khi đã cài một lần từ `vietjet-team`, người dùng chạy `codex plugin marketplace upgrade vietjet-team` và mở task mới để nhận phiên bản đã phát hành tiếp theo.
 
 ## Bản vá 5.0.1 — 23/09/2026
 

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#e21b2d" />
+  <title>Vietjet Hybrid Customer Journey — Final v2.0</title>
+  <meta name="description" content="Interactive Hybrid Customer Journey Final v2.0 for Vietjet: 6 chapters, 12 moments, 2 change rails, 3 customer promises and 8 hybrid enablers." />
+  <style>
+    :root{
+      --red:#e21b2d; --red2:#ff3b30; --yellow:#ffcc00; --gold:#f3a91a;
+      --ink:#15233b; --muted:#5c6878; --sky:#eef8ff; --line:#e7ebf0;
+      --white:#fff; --green:#16a085; --blue:#1890ff; --purple:#7c5cff;
+      --shadow:0 18px 50px rgba(21,35,59,.10); --radius:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%,rgba(255,204,0,.18),transparent 22rem),
+        radial-gradient(circle at 90% 18%,rgba(24,144,255,.14),transparent 28rem),
+        linear-gradient(180deg,#fbfdff 0,#f5fbff 42%,#fff 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1440px,94vw);margin:auto}
+    .topbar{
+      position:sticky;top:0;z-index:40;backdrop-filter:blur(18px);
+      background:rgba(255,255,255,.86);border-bottom:1px solid rgba(231,235,240,.88)
+    }
+    .nav{height:74px;display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--red);font-size:24px;letter-spacing:-1px}
+    .brand .spark{width:18px;height:18px;border-radius:50%;background:var(--yellow);box-shadow:10px 0 0 var(--red)}
+    .nav-links{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a,.btn{
+      border:1px solid var(--line);border-radius:999px;padding:10px 14px;background:#fff;font-weight:750;font-size:13px;cursor:pointer
+    }
+    .btn.primary{background:var(--red);color:#fff;border-color:var(--red)}
+    .hero{padding:44px 0 28px;display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:stretch}
+    .hero-copy,.plane-card,.promise-panel,.rail,.pillars,.journey-shell{
+      border:1px solid rgba(226,27,45,.08);background:rgba(255,255,255,.94);box-shadow:var(--shadow);border-radius:var(--radius)
+    }
+    .hero-copy{padding:42px}
+    .eyebrow{color:var(--red);font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+    h1{font-size:clamp(42px,5vw,78px);line-height:.94;margin:12px 0 18px;letter-spacing:-3px}
+    h1 span{color:var(--red)} h1 em{font-style:normal;color:var(--gold)}
+    .lead{font-size:20px;line-height:1.55;color:var(--muted);max-width:720px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .chip{font-size:13px;font-weight:850;padding:10px 13px;border-radius:999px;background:#fff4f2;border:1px solid #ffd7d2}
+    .chip.yellow{background:#fff9d8;border-color:#ffe26c}.chip.blue{background:#eef7ff;border-color:#cce7ff}
+    .plane-card{position:relative;overflow:hidden;min-height:430px;background:linear-gradient(180deg,#ddf3ff,#fff 62%,#f9fdff)}
+    .plane-card:before{content:"";position:absolute;inset:auto -16% -44% -16%;height:70%;border-radius:50%;background:radial-gradient(circle,rgba(24,144,255,.18),transparent 65%)}
+    .plane-title{position:absolute;left:26px;top:24px;z-index:2}
+    .plane-title b{display:block;font-size:24px}.plane-title span{color:var(--muted);font-size:13px}
+    .plane-svg{position:absolute;inset:96px 2% 14px;width:96%;height:72%}
+    .hero-badge{position:absolute;right:24px;bottom:22px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 10px 30px rgba(21,35,59,.12);font-weight:900;color:var(--red)}
+    .section{padding:28px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+    .section-head h2{font-size:34px;margin:0;letter-spacing:-1.2px}.section-head p{margin:5px 0 0;color:var(--muted)}
+    .promises{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .promise{padding:24px;border-radius:20px;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden}
+    .promise:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--red)}
+    .promise:nth-child(2):before{background:var(--gold)} .promise:nth-child(3):before{background:var(--blue)}
+    .promise .icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#fff4f2;font-size:22px;margin-bottom:14px}
+    .promise h3{margin:0 0 8px;font-size:19px}.promise p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
+    .note{font-size:12px;color:#7a6653;margin-top:14px;background:#fff9e6;border:1px solid #ffe5a0;padding:12px 14px;border-radius:14px}
+    .journey-shell{padding:20px}
+    .filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+    .filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 13px;font-weight:800;font-size:12px;cursor:pointer}
+    .filter.active{background:var(--red);color:#fff;border-color:var(--red)}
+    .journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{
+      border:1px solid var(--line);background:#fff;border-radius:20px;padding:18px;min-height:250px;position:relative;
+      transition:.22s transform,.22s box-shadow,.22s opacity
+    }
+    .step:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(21,35,59,.10)}
+    .step.hidden{display:none}
+    .num{width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:950;font-size:17px;box-shadow:0 7px 18px rgba(226,27,45,.24)}
+    .stage-tag{position:absolute;right:14px;top:14px;font-size:10px;padding:7px 9px;border-radius:999px;background:#f4f7fa;color:#677487;font-weight:850}
+    .step h3{font-size:19px;line-height:1.12;margin:18px 0 10px;letter-spacing:-.35px}
+    .step p{color:var(--muted);font-size:13px;line-height:1.52;margin:0 0 12px}
+    .step ul{padding-left:18px;margin:0;color:#34435a;font-size:12px;line-height:1.55}
+    .chapter-line{height:5px;border-radius:999px;margin-top:16px;background:linear-gradient(90deg,var(--red),var(--yellow))}
+    .rail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .rail{padding:24px;position:relative;overflow:hidden}
+    .rail:after{content:"";position:absolute;right:-50px;top:-50px;width:180px;height:180px;border-radius:50%;background:rgba(226,27,45,.06)}
+    .rail.airline:after{background:rgba(24,144,255,.08)}
+    .rail h3{margin:2px 0 8px;font-size:22px}.rail p{color:var(--muted);line-height:1.55;font-size:14px;max-width:90%}
+    .rail-flow{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .rail-flow span{background:#f6f8fb;border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:850}
+    .pillars{padding:24px}
+    .pillar-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+    .pillar{text-align:center;padding:15px 8px;border:1px solid var(--line);border-radius:17px;background:#fff}
+    .pillar .pi{font-size:24px;margin-bottom:7px}.pillar b{display:block;font-size:11px;line-height:1.2}
+    .architecture{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .arch{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .arch small{color:var(--red);font-weight:900}.arch h4{margin:8px 0 7px}.arch p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+    footer{margin-top:34px;padding:34px 0 52px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    .foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .floating{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:30}
+    .floating .btn{box-shadow:0 8px 30px rgba(21,35,59,.16)}
+    @media(max-width:1080px){
+      .hero{grid-template-columns:1fr}.journey-grid{grid-template-columns:repeat(3,1fr)}
+      .pillar-grid{grid-template-columns:repeat(4,1fr)}.architecture{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:760px){
+      .nav-links{display:none}.hero-copy{padding:26px} h1{letter-spacing:-2px}
+      .promises,.rail-grid{grid-template-columns:1fr}.journey-grid{grid-template-columns:1fr 1fr}
+      .pillar-grid{grid-template-columns:repeat(2,1fr)}.plane-card{min-height:330px}
+      .section-head{align-items:start;flex-direction:column}.architecture{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){.journey-grid{grid-template-columns:1fr}.hero{padding-top:24px}.lead{font-size:17px}.floating{display:none}}
+    @media print{
+      .topbar,.floating,.filterbar{display:none!important}
+      body{background:#fff}.hero,.section{break-inside:avoid}.step{break-inside:avoid}
+      .hero-copy,.plane-card,.journey-shell,.promise-panel,.rail,.pillars{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top"><span class="spark"></span>vietjetAir.com</a>
+      <nav class="nav-links">
+        <a href="#journey">12 Moments</a><a href="#changes">2 Change Rails</a><a href="#pillars">8 Hybrid Pillars</a>
+        <button class="btn primary" onclick="window.print()">Print / Save PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Hybrid Customer Journey · Final v2.0</div>
+        <h1>FLY <span>YOUR</span> <em>WAY</em></h1>
+        <p class="lead">Một hành trình Hybrid dễ hiểu hơn: khách chọn đúng điều mình cần, nhìn rõ tổng giá và luôn có một luồng hỗ trợ nhất quán khi kế hoạch thay đổi.</p>
+        <div class="chips">
+          <span class="chip">More Choice</span><span class="chip yellow">Clear Price</span><span class="chip blue">Care When It Matters</span>
+        </div>
+      </div>
+      <div class="plane-card" aria-label="Vietjet wide-body aircraft illustration">
+        <div class="plane-title"><b>A330 Hybrid Experience</b><span>Wide-body visual reference · red / yellow / gold livery</span></div>
+        <svg class="plane-svg" viewBox="0 0 960 430" role="img" aria-label="Stylised Vietjet A330 wide-body aircraft">
+          <defs>
+            <linearGradient id="body" x1="0" x2="1"><stop offset="0" stop-color="#e31b2d"/><stop offset=".43" stop-color="#f02c36"/><stop offset=".44" stop-color="#f5f7f9"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+            <linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#ffcf38"/><stop offset="1" stop-color="#c89111"/></linearGradient>
+            <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-opacity=".16"/></filter>
+          </defs>
+          <g filter="url(#shadow)" transform="translate(36 70)">
+            <path d="M70 170 C230 122 563 101 760 110 C850 114 905 137 918 157 C906 178 845 197 750 201 C530 208 231 207 70 178 Z" fill="url(#body)"/>
+            <path d="M95 166 C220 144 420 132 561 130 C493 147 414 168 348 184 C236 191 151 189 95 181Z" fill="#df1f2d"/>
+            <path d="M555 132 C618 140 685 146 750 150 C690 154 631 158 574 164 C533 157 512 148 555 132Z" fill="url(#gold)" opacity=".95"/>
+            <path d="M129 165 L40 83 L79 77 L176 154Z" fill="#df1f2d"/>
+            <path d="M117 161 L78 95 L92 92 L170 155Z" fill="url(#gold)" opacity=".85"/>
+            <path d="M386 186 L272 277 L342 277 L541 196Z" fill="#e8ebef" stroke="#c6ccd5" stroke-width="3"/>
+            <path d="M528 190 L650 260 L715 252 L600 184Z" fill="#e8ebef" stroke="#c6ccd5" stroke-width="3"/>
+            <ellipse cx="448" cy="213" rx="43" ry="31" fill="#d91f2c"/><ellipse cx="448" cy="213" rx="18" ry="18" fill="#586170"/>
+            <ellipse cx="638" cy="207" rx="43" ry="31" fill="#d91f2c"/><ellipse cx="638" cy="207" rx="18" ry="18" fill="#586170"/>
+            <circle cx="442" cy="205" r="6" fill="#ffdf43"/><circle cx="632" cy="199" r="6" fill="#ffdf43"/>
+            <text x="196" y="173" font-size="34" font-weight="900" fill="#ffffff" transform="rotate(-2 196 173)">vietjetAir.com</text>
+            <g fill="#263246" opacity=".82">
+              <rect x="547" y="133" width="12" height="4" rx="2"/><rect x="566" y="133" width="12" height="4" rx="2"/>
+              <rect x="585" y="133" width="12" height="4" rx="2"/><rect x="604" y="134" width="12" height="4" rx="2"/>
+              <rect x="623" y="134" width="12" height="4" rx="2"/><rect x="642" y="135" width="12" height="4" rx="2"/>
+              <rect x="661" y="136" width="12" height="4" rx="2"/><rect x="680" y="137" width="12" height="4" rx="2"/>
+              <rect x="699" y="139" width="12" height="4" rx="2"/>
+            </g>
+            <path d="M838 142 Q870 146 889 157 Q869 166 839 169Z" fill="#f5f7f9"/>
+            <rect x="846" y="148" width="17" height="7" rx="2" fill="#263246"/><rect x="868" y="151" width="13" height="7" rx="2" fill="#263246"/>
+          </g>
+        </svg>
+        <div class="hero-badge">More Smiles Ahead ✈</div>
+      </div>
+    </section>
+
+    <section class="section" id="promises">
+      <div class="section-head"><div><h2>3 Customer Promises</h2><p>Lời hứa trải nghiệm — chỉ public khi capability và policy đã được xác nhận.</p></div></div>
+      <div class="promises">
+        <article class="promise"><div class="icon">💳</div><h3>Biết rõ tổng giá</h3><p>Tổng giá được cập nhật rõ trước khi thanh toán, bao gồm những dịch vụ khách chủ động chọn.</p></article>
+        <article class="promise"><div class="icon">✓</div><h3>Quyền lợi đã mua được xử lý rõ ràng</h3><p>Nếu một dịch vụ không thể cung cấp, hệ thống phải có phương án xử lý theo chính sách áp dụng.</p></article>
+        <article class="promise"><div class="icon">🔔</div><h3>Có thay đổi, được báo và được chọn</h3><p>Khi lịch trình thay đổi, khách nhận thông tin và các lựa chọn đủ điều kiện trên cùng một nguồn sự thật.</p></article>
+      </div>
+      <div class="note">Internal validation gate: Operations · Customer Service · Legal · Commercial · Digital. Không coi các câu trên là policy public cho đến khi được phê duyệt.</div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="section-head">
+        <div><h2>6 Chapters · 12 Moments</h2><p>Journey chính là tuyến tính; hai luồng thay đổi được tách riêng ở phần dưới.</p></div>
+      </div>
+      <div class="journey-shell">
+        <div class="filterbar">
+          <button class="filter active" data-filter="all">Tất cả</button>
+          <button class="filter" data-filter="c1">1 · Inspire & Choose</button>
+          <button class="filter" data-filter="c2">2 · Book & Personalise</button>
+          <button class="filter" data-filter="c3">3 · Prepare & Depart</button>
+          <button class="filter" data-filter="c4">4 · Fly & Connect</button>
+          <button class="filter" data-filter="c5">5 · Arrive & Care</button>
+          <button class="filter" data-filter="c6">6 · Return</button>
+        </div>
+
+        <div class="journey-grid">
+          <article class="step" data-stage="c1"><div class="num">01</div><span class="stage-tag">INSPIRE</span><h3>Chọn nơi mình muốn đến</h3><p>Biến cảm hứng thành một hành trình có thể đặt.</p><ul><li>Khám phá điểm đến & mạng bay</li><li>Bay thẳng / nối chặng</li><li>Thông tin phù hợp với thời gian đi</li></ul><div class="chapter-line"></div></article>
+          <article class="step" data-stage="c1"><div class="num">02</div><span class="stage-tag">CHOOSE</span><h3>Chọn cách bay hợp gu</h3><p>So sánh Eco, Deluxe, SkyBoss, Business bằng quyền lợi thực tế.</p><ul><li>Fare & benefits comparison</li><li>Hành lý · ghế · meal · flexibility</li><li>Giá rõ trước khi đi tiếp</li></ul><div class="chapter-line"></div></article>
+
+          <article class="step" data-stage="c2"><div class="num">03</div><span class="stage-tag">BOOK</span><h3>Đặt vé với sự tự tin</h3><p>Booking, payment và confirmation là một moment of truth riêng.</p><ul><li>Tổng giá cho cả booking</li><li>Thanh toán an toàn</li><li>Pending / success / failed rõ ràng</li></ul><div class="chapter-line"></div></article>
+          <article class="step" data-stage="c2"><div class="num">04</div><span class="stage-tag">PERSONALISE</span><h3>Thêm điều mình thích</h3><p>Chỉ gợi ý dịch vụ còn thiếu và đang mở bán cho chuyến bay.</p><ul><li>Seat · bag · meal · priority</li><li>Không trùng quyền lợi</li><li>Tổng giá cập nhật tức thì</li></ul><div class="chapter-line"></div></article>
+
+          <article class="step" data-stage="c3"><div class="num">05</div><span class="stage-tag">PREPARE</span><h3>Sẵn sàng cho giờ cất cánh</h3><p>Checklist theo đúng hành trình và nhu cầu của khách.</p><ul><li>Giấy tờ · nhập cảnh</li><li>Online check-in khi đủ điều kiện</li><li>Special assistance</li></ul><div class="chapter-line"></div></article>
+          <article class="step" data-stage="c3"><div class="num">06</div><span class="stage-tag">AIRPORT</span><h3>Đến sân bay, bắt đầu thật nhẹ</h3><p>Kênh số và nhân viên dùng chung context.</p><ul><li>Terminal & bag drop</li><li>Kiosk / counter guidance</li><li>Không bắt khách làm lại từ đầu</li></ul><div class="chapter-line"></div></article>
+          <article class="step" data-stage="c3"><div class="num">07</div><span class="stage-tag">BOARD</span><h3>Đúng cửa bay, đúng nhịp khởi hành</h3><p>Thông tin gate và boarding phải kịp thời, dễ hiểu.</p><ul><li>Gate & time updates</li><li>Digital boarding pass</li><li>Human help when needed</li></ul><div class="chapter-line"></div></article>
+
+          <article class="step" data-stage="c4"><div class="num">08</div><span class="stage-tag">FLY</span><h3>Trên cao, tận hưởng theo cách của bạn</h3><p>Trải nghiệm đúng những gì chuyến bay thực sự được trang bị.</p><ul><li>Cabin & seat</li><li>Hot meals / retail</li><li>Entertainment / connectivity khi có</li></ul><div class="chapter-line"></div></article>
+          <article class="step" data-stage="c4"><div class="num">09</div><span class="stage-tag">CONNECT</span><h3>Nối chặng mà vẫn yên tâm</h3><p>Phân biệt rõ protected connection và self-connection.</p><ul><li>Terminal & minimum connection</li><li>Baggage handling</li><li>Scope of support rõ trước khi mua</li></ul><div class="chapter-line"></div></article>
+
+          <article class="step" data-stage="c5"><div class="num">10</div><span class="stage-tag">ARRIVE</span><h3>Đến nơi, mang theo đủ niềm vui</h3><p>Kết thúc chuyến bay nhanh, rõ và không để khách tự đoán.</p><ul><li>Baggage collection</li><li>Arrival guidance</li><li>Onward journey</li></ul><div class="chapter-line"></div></article>
+          <article class="step" data-stage="c5"><div class="num">11</div><span class="stage-tag">CARE</span><h3>Có phát sinh, có người theo đến cùng</h3><p>Một case ID, một trạng thái, một lịch sử xử lý.</p><ul><li>Lost / damaged baggage</li><li>Case ownership & SLA</li><li>Không kể lại từ đầu</li></ul><div class="chapter-line"></div></article>
+
+          <article class="step" data-stage="c6"><div class="num">12</div><span class="stage-tag">RETURN</span><h3>Niềm vui còn ở chuyến bay kế tiếp</h3><p>SkyJoy trở thành relationship layer, không chỉ là điểm thưởng sau bay.</p><ul><li>Earn & claim</li><li>Feedback to right owner</li><li>Preference → next best journey</li></ul><div class="chapter-line"></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="changes">
+      <div class="section-head"><div><h2>2 Change Rails</h2><p>Không ép exception vào flow tuyến tính — chúng chạy xuyên hành trình.</p></div></div>
+      <div class="rail-grid">
+        <article class="rail"><div class="eyebrow">Customer-initiated change</div><h3>Khi kế hoạch của bạn thay đổi</h3><p>Manage booking cho phép khách thấy điều kiện, chênh lệch giá và phí trước khi xác nhận thay đổi.</p><div class="rail-flow"><span>Open booking</span><span>See eligibility</span><span>See fare difference</span><span>Confirm</span><span>Receive update</span></div></article>
+        <article class="rail airline"><div class="eyebrow" style="color:var(--blue)">Airline-initiated disruption</div><h3>Khi chuyến bay thay đổi</h3><p>Detect → identify affected bookings → notify → show eligible options → resolve → close case; mọi kênh dùng cùng context.</p><div class="rail-flow"><span>Detect</span><span>Notify</span><span>Options</span><span>Self-service / Agent</span><span>Resolve</span></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="pillars">
+      <div class="section-head"><div><h2>8 Hybrid Enablers</h2><p>Các trụ cột phía sau trải nghiệm — không phải tất cả đều cần xuất hiện trực tiếp với khách.</p></div></div>
+      <div class="pillars">
+        <div class="pillar-grid">
+          <div class="pillar"><div class="pi">🤝</div><b>Vietjet Group Capability</b></div>
+          <div class="pillar"><div class="pi">◉</div><b>Đa dạng lựa chọn</b></div>
+          <div class="pillar"><div class="pi">✈</div><b>Tàu bay & cabin hiện đại</b></div>
+          <div class="pillar"><div class="pi">🍽</div><b>Ẩm thực nóng tươi</b></div>
+          <div class="pillar"><div class="pi">❤</div><b>Dịch vụ từ trái tim</b></div>
+          <div class="pillar"><div class="pi">🌏</div><b>Mạng bay rộng khắp</b></div>
+          <div class="pillar"><div class="pi">◌</div><b>Kết nối & giải trí</b></div>
+          <div class="pillar"><div class="pi">★</div><b>Hậu mãi & SkyJoy</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-head"><div><h2>From Journey to Operating Model</h2><p>Mỗi lời hứa phải có capability phía sau.</p></div></div>
+      <div class="architecture">
+        <div class="arch"><small>01 · OWNER</small><h4>Business ownership</h4><p>Mỗi moment có accountable owner và escalation path.</p></div>
+        <div class="arch"><small>02 · DATA</small><h4>Single source of truth</h4><p>Fare, baggage, aircraft, meal, connection, disruption và SkyJoy cùng một truth layer.</p></div>
+        <div class="arch"><small>03 · SYSTEM</small><h4>Cross-channel context</h4><p>Web, App, Airport, Contact Center và AI Agent nhìn thấy cùng PNR / case context.</p></div>
+        <div class="arch"><small>04 · KPI</small><h4>Measure value & friction</h4><p>Conversion, contribution, fulfilment, resolution time, repeat purchase và complaint guardrails.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating">
+    <a class="btn" href="#journey">↑ Journey</a>
+    <button class="btn primary" onclick="window.print()">Save PDF</button>
+  </div>
+
+  <footer>
+    <div class="wrap foot">
+      <div><b style="color:var(--red)">Vietjet Hybrid Customer Journey · Final v2.0</b><br/>Interactive concept view for internal review.</div>
+      <div>6 Chapters · 12 Moments · 2 Change Rails · 3 Promises · 8 Enablers</div>
+    </div>
+  </footer>
+
+  <script>
+    const filters = document.querySelectorAll(".filter");
+    const steps = document.querySelectorAll(".step");
+    filters.forEach(btn => btn.addEventListener("click", () => {
+      filters.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const target = btn.dataset.filter;
+      steps.forEach(step => {
+        step.classList.toggle("hidden", target !== "all" && step.dataset.stage !== target);
+      });
+    }));
+  </script>
+</body>
+</html>

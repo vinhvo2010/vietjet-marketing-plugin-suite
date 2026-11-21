@@ -82,6 +82,7 @@ def main() -> int:
     subprocess.run([sys.executable, str(ROOT / "scripts" / "sync_specialists.py"), "--check"], check=True)
     subprocess.run([sys.executable, str(ROOT / "tests" / "test_runtime.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "tests" / "test_suite.py")], check=True)
+    subprocess.run([sys.executable, str(ROOT / "tests" / "test_readiness.py")], check=True)
     print("VALIDATE SUITE: OK — 18 agents, 24 skills, team router, schemas and research ledger")
     return 0
 

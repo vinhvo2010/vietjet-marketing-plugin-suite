@@ -4,6 +4,7 @@ import argparse, json, os, re, sys, unicodedata, urllib.request, urllib.error
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any
+import readiness
 
 ROOT = Path(__file__).resolve().parents[1]
 FRONT = re.compile(r'^---\n(.*?)\n---\n', re.S)
@@ -439,7 +440,13 @@ def main():
     r=sub.add_parser('run'); r.add_argument('agent'); r.add_argument('task',nargs='+')
     tp=sub.add_parser('team-plan'); tp.add_argument('mission_json')
     tpp=sub.add_parser('team-prompts'); tpp.add_argument('mission_json')
+    sub.add_parser('connector-status')
+    ev=sub.add_parser('evidence-check'); ev.add_argument('ledger_json')
+    rv=sub.add_parser('release-check'); rv.add_argument('release_json'); rv.add_argument('ledger_json'); rv.add_argument('--artifact', required=True)
     args=ap.parse_args(); reg=Registry()
+    if args.cmd=='connector-status': raise SystemExit(readiness.main(['connectors']))
+    if args.cmd=='evidence-check': raise SystemExit(readiness.main(['evidence', args.ledger_json]))
+    if args.cmd=='release-check': raise SystemExit(readiness.main(['release', args.release_json, args.ledger_json, '--artifact', args.artifact]))
     if args.cmd=='doctor': raise SystemExit(doctor(reg))
     if args.cmd=='list':
         print('AGENTS'); [print(' -',x) for x in reg.agents]; print('SKILLS'); [print(' -',x) for x in reg.skills]; print('PLUGINS'); [print(' -',x) for x in reg.plugins]

@@ -61,7 +61,7 @@ def audit_evidence(ledger: Any, now: datetime | None = None) -> dict[str, Any]:
             continue
         seen.add(ident)
         label, kind = entry.get("data_label"), entry.get("claim_type")
-        if label not in LABELS or kind not in CLAIM_TYPES:
+        if not isinstance(label, str) or not isinstance(kind, str) or label not in LABELS or kind not in CLAIM_TYPES:
             issues.append(f"{ident}: invalid data_label or claim_type")
             continue
         if not isinstance(entry.get("claim"), str) or not entry["claim"].strip():
@@ -116,7 +116,7 @@ def audit_connectors(root: Path = ROOT, environ: dict[str, str] | None = None) -
             else:
                 status = "INVALID_BLUEPRINT"
             items.append({"name": name, "type": kind, "status": status, "missing_env_names": missing})
-        except (ValueError, KeyError, json.JSONDecodeError) as exc:
+        except (ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
             items.append({"name": path.stem, "type": "unknown", "status": "INVALID_BLUEPRINT",
                           "issues": [type(exc).__name__]})
     return {

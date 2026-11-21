@@ -53,3 +53,10 @@ Documentation-only patch that clarifies the one-time install and subsequent mark
 # v5.0.4 — Installed-skill path resolution (2026-09-23)
 
 Fixes a fresh-task failure where the squad skill looked for `rules/` under the user's current workspace instead of the installed plugin. All 24 skill entrypoints now establish `PLUGIN_ROOT` and resolve references against their own installed package. The generator remains the source of truth for 18 specialist entrypoints. No governance gate was relaxed.
+
+## v5.1.0 — Offline readiness gates (candidate, unmerged)
+
+- Introduces conservative evidence-expiry and release-artifact SHA-256 checks. All outcomes remain drafts or human review; approval references do not grant execution rights.
+- Introduces connector configuration diagnostics with no network requests and no secret-value output; configured is not connected.
+- Integrates the three checks into the `vjai` CLI and adds 15 regression cases and GitHub Actions CI.
+- Keeps the 18 roles / 24 skills / 11 blueprints unchanged, without claiming production data connections or public Directory approval.

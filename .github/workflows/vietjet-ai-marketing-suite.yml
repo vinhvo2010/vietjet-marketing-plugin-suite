@@ -1,0 +1,38 @@
+name: Vietjet Marketing Suite validation
+
+on:
+  pull_request:
+    paths:
+      - "plugins/vietjet-ai-marketing-suite/**"
+      - ".github/workflows/vietjet-ai-marketing-suite.yml"
+  push:
+    paths:
+      - "plugins/vietjet-ai-marketing-suite/**"
+      - ".github/workflows/vietjet-ai-marketing-suite.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: plugins/vietjet-ai-marketing-suite
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bytecode compile
+        run: python3 -m compileall -q runtime scripts tests
+      - name: Structural, routing and generated-skill checks
+        run: python3 scripts/validate_suite.py
+      - name: Offline evidence, connector and release regression tests
+        run: python3 tests/test_readiness.py
+      - name: Connector diagnostics
+        run: python3 runtime/vietjet_runtime.py connector-status

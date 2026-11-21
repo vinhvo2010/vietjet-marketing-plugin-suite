@@ -1,8 +1,22 @@
-# Vietjet AI Marketing Suite v5.0.4
+# Vietjet AI Marketing Suite v5.1.0 (review candidate)
 
 Vietjet Group Marketing Operating System dạng local plugin: **18 canonical agent contracts**, **24 discoverable skills**, deterministic Team Router, typed mission/handoff/experiment objects, nine governance rules, eleven connector blueprints và bộ kiểm thử không cần dependency ngoài.
 
 V5 tham chiếu app MCP đã đăng ký qua `.app.json`, connector ID `asdk_app_6ab3917655d48191a6c5e2ab3fac93d2`. ID này không chứng minh app đã phân phối công khai hoặc chạy được trên mọi tài khoản Go/Plus. Công cụ công khai không cần tài khoản nhà cung cấp; quyền sử dụng trên ChatGPT còn phụ thuộc gói, tài khoản và trạng thái phân phối. Bản Codex plugin local và App/MCP hosted là hai bề mặt phát hành riêng; cập nhật một bên không tự động thay thế bên kia.
+
+## New in v5.1.0 — Evidence & Release Readiness (offline only)
+
+- Adds `connector-status` to distinguish missing configuration from *configured but unverified* blueprints. No provider calls or secret exposure.
+- Adds `evidence-check` to enforce unique claim IDs, source/owner metadata, timezone-aware verification windows and stale-source blocking for verified evidence.
+- Adds `release-check` to cross-check immutable SHA-256 artifact bytes, cited evidence and recorded approval references; even a clean result is **READY_FOR_HUMAN_REVIEW**, never authorization.
+- Adds regression tests, GitHub CI, and [readiness documentation](docs/readiness-and-release-gates.md).
+- Retains 18 specialist roles, 24 skills and 11 connector/capability blueprints. **No production or Directory readiness is claimed.**
+
+```bash
+python3 runtime/vietjet_runtime.py connector-status
+python3 runtime/vietjet_runtime.py evidence-check evidence-ledger.json
+python3 runtime/vietjet_runtime.py release-check release-packet.json evidence-ledger.json --artifact exact-artifact.pdf
+```
 
 ## Phân phối cho team
 
